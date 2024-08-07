@@ -1,0 +1,56 @@
+### ========== USERS ==========
+###
+GET http://localhost:3000/users
+token: 1234
+
+###
+GET http://localhost:3000/users/7a2551bc-8668-4955-80c5-2dcd3c91a26b
+token: 1234
+
+###
+GET http://localhost:3000/users?name=Bartolomaiu
+token: 1234
+
+###
+GET http://localhost:3000/users/profile/
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjM2MwYTRlMy03ZGQ5LTQ2ZjgtYjYxMC02ODgyZjhjOWJlNDkiLCJpZCI6ImMzYzBhNGUzLTdkZDktNDZmOC1iNjEwLTY4ODJmOGM5YmU0OSIsImVtYWlsIjoiZW1haWxAbWFpbC5jb20iLCJpYXQiOjE3MTkwOTE5ODAsImV4cCI6MTcxOTk1NTk4MH0.8PORJqdhIyjIJECV1FS8m-0OxoPLUnZ5bbPcSZaPvF4
+
+###
+GET http://localhost:3000/users/profile/images
+token: 1234
+
+###
+GET http://localhost:3000/users/coffee
+token: 1234
+###
+GET http://localhost:3000/users/message
+###
+GET http://localhost:3000/users/request
+###
+###
+###
+###
+
+### signup
+POST http://localhost:3000/users/signup
+Content-Type: application/json
+token: 1234
+
+{
+    "name": "Frank",
+    "email": "email@mail.com",
+    "password": "password"
+}
+### signin
+POST http://localhost:3000/users/signin
+Content-Type: application/json
+
+{
+    "email": "email@mail.com",
+    "password": "password"
+}
+
+###
+PUT http://localhost:3000/users
+###
+DELETE http://localhost:3000/users

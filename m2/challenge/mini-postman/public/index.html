@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini-Postman | Axios</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <script src="https://frankgp.com/component/stat.js" type="module"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"></script>
+    <style>
+      body {
+        text-align: center;
+      }
+      form,
+      .container {
+        max-width: 33em;
+        margin: auto;
+      }
+      input,
+      textarea {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <br>
+    <a href="./mini-postman-fetch.html"><button>mini-postman-fetch</button></a>
+    <hr />
+    <br />
+    <h2>Mini-Postman | Axios</h2>
+
+    <form action="">
+      <input type="text" name="" id="apiUrl" value="http://127.0.0.1:3000/api" />
+      <br /><br />
+      <button type="button" id="get_button" onclick="getWithPromise()">getWithPromise</button>
+      <button type="button" id="get_button" onclick="getWithAsync()">getWithAsync</button>
+      <button type="button" id="postAxios1" onclick="postAxios()">postAxios</button>
+      <button type="button" id="put_button" onclick="putAxios()">putAxios</button>
+      <button type="button" id="delete_button" onclick="deleteAxios()">deleteAxios</button>
+      <br /><br />
+    </form>
+
+    <div class="container">
+      <pre><code>{"id": 2,"name": "Peter Demo 2"}</code></pre>
+      <textarea name="" id="textarea_input" cols="30" rows="10" placeholder="textarea_input"></textarea>
+      <textarea name="" id="textarea_output" cols="30" rows="10" placeholder="textarea_output"></textarea>
+    </div>
+
+    <script>
+      const apiUrl = document.querySelector("#apiUrl");
+      const textarea_input = document.querySelector("#textarea_input");
+      const textarea_output = document.querySelector("#textarea_output");
+
+      // ========== getWithPromise ==========
+      function getWithPromise() {
+        const urlValue = apiUrl.value;
+        axios(urlValue)
+          .then((response) => {
+            console.log(response.data);
+            textarea_output.value = JSON.stringify(response.data, null, 2);
+          })
+          .catch((err) => console.log(err));
+      }
+
+      // ========== getWithAsync ==========
+      const getWithAsync = async () => {
+        const urlValue = apiUrl.value;
+
+        try {
+          const response = await axios.get(urlValue);
+          console.log(response.data);
+          textarea_output.value = JSON.stringify(response.data, null, 2);
+        } catch (error) {
+          console.log(error);
+        }
+      };
+
+      // ========== postAxios ==========
+      function postAxios() {
+        const urlValue = apiUrl.value;
+        const textarea_inputValue = textarea_input.value;
+        const dataParse = JSON.parse(textarea_inputValue);
+
+        axios
+          .post(urlValue, dataParse)
+          .then((response) => {
+            console.log(response);
+            // textarea_output.value = response.data;
+            textarea_output.value = JSON.stringify(response.data, null, 2); // Convert JSON to string with formatting
+            // textarea_output.value = Object.keys(response.data)[0]; // Convert JSON to string with formatting
+          })
+          .catch((error) => {
+            // Handle error
+            console.error("Error:", error);
+          });
+      }
+
+      // ========== putAxios ==========
+      function putAxios() {
+        const urlValue = apiUrl.value;
+        const textarea_inputValue = textarea_input.value;
+        const dataParse = JSON.parse(textarea_inputValue);
+
+        axios
+          .put(urlValue, dataParse)
+          .then((response) => {
+            console.log(response);
+            textarea_output.value = JSON.stringify(response.data, null, 2); // Convert JSON to string with formatting
+          })
+          .catch((error) => {
+            // Handle error
+            console.error("Error:", error);
+          });
+      }
+
+      // ========== deleteAxios ==========
+      function deleteAxios() {
+        const urlValue = apiUrl.value;
+
+        axios
+          .delete(urlValue)
+          .then((response) => {
+            // Handle successful response
+            console.log(response.data);
+            textarea_output.value = JSON.stringify(response.data, null, 2); // Convert JSON to string with formatting
+          })
+          .catch((error) => {
+            // Handle error
+            console.error("Error:", error);
+          });
+      }
+    </script>
+  </body>
+</html>

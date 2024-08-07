@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://frankgp.com/component/stat.js" type="module"></script>
+    <link href="https://bit.ly/bootstrap533_css" rel="stylesheet" />
+    <script src="https://bit.ly/bootstrap533_js"></script>
+    <link rel="stylesheet" href="https://bit.ly/bootstrap-icons130" />
+
+    <title>Movie Cards</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <!-- ========== navbar... ========== -->
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand me-auto" href="#">Logo</a>
+
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Logo 2</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link mx-lg-2 active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link mx-lg-2" href="#">Movies</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link mx-lg-2" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link mx-lg-2" href="#">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <a href="#" class="github-button">GitHub</a>
+          <button
+            class="navbar-toggler pe-0"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- ========== navbar. ========== -->
+
+      <!-- ========== Hero Section... ========== -->
+      <section class="hero_section">
+        <div class="container d-flex align-items-center justify-content-center fs-1 text-white flex-column">
+          <h1>Responsive NavBar</h1>
+          <h2>Bootstrap 5.3</h2>
+        </div>
+      </section>
+      <!-- ========== Hero Section. ========== -->
+    </header>
+
+    <div class="container mt-5">
+      <p style="text-align: center">JSON: <a href="https://webpt19b.web.app/data/movies.json" target="_blank">https://webpt19b.web.app/data/movies.json</a></p>
+      <p style="text-align: center">API: <a href="https://api.1rodemayo.com/movies" target="_blank">https://api.1rodemayo.com/movies</a></p>
+      <p style="text-align: center">TOOLS: <a href="https://webpt19b.web.app/bootstrap-breakpoints" target="_blank">bootstrap-breakpoints</a></p>
+      <div class="row" id="movieCardsRow"></div>
+    </div>
+    <footer class="container-fluid mt-5 py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h1>About Us</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi neque laborum eum facere sunt impedit veniam temporibus culpa doloribus dicta. Reiciendis sit placeat
+              in? Cum, aspernatur consequuntur. Similique, fuga quos!
+            </p>
+            <p><i class="bi bi-telephone-fill"></i> +51999888777</p>
+            <p><i class="bi bi-envelope"></i> user@mail.com</p>
+          </div>
+          <div class="col-md-4">
+            <h1>Lastet News</h1>
+            <p><i class="bi bi-newspaper"></i> Header Create by <a href="https://youtu.be/h5apE3E72wY" target="_blank" rel="noopener noreferrer">CodeJungle</a></p>
+            <p><i class="bi bi-newspaper"></i> Footer Create by <a href="https://youtu.be/A_t-6N01itk" target="_blank" rel="noopener noreferrer">thewebdesigner</a></p>
+            <p><i class="bi bi-newspaper"></i> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, laborum?</p>
+            <p><i class="bi bi-newspaper"></i> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, laborum?</p>
+          </div>
+          <div class="col-md-4">
+            <h1>Instagram</h1>
+            <div class="row row-cols-2 g-3">
+              <div class="col">
+                <img class="img-fluid" src="//bit.ly/fgpImg1" alt="" />
+              </div>
+              <div class="col">
+                <img class="img-fluid" src="//bit.ly/fgpImg2" alt="" />
+              </div>
+              <div class="col">
+                <img class="img-fluid" src="//bit.ly/fgpImg3" alt="" />
+              </div>
+              <div class="col">
+                <img class="img-fluid" src="//bit.ly/fgpImg4" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      function createCard(movie) {
+        return /* html */ `
+      <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-3">
+        <div class="card">
+          <img src="${movie.poster}" class="card-img-top" alt="${movie.title}">
+          <div class="card-body">
+            <h5 class="card-title">${movie.title}</h5>
+            <p class="card-text fs-6">${movie.year} | ${movie.duration}</p>
+            <p class="card-text">${movie.genre.join(", ")}</p>
+            <p class="card-text">Director: ${movie.director}</p>
+            <p class="card-text">Rating: ${movie.rate}</p>
+          </div>
+        </div>
+      </div>
+    `;
+      }
+
+      // Function to render movie cards
+      function renderMovieCards(movies) {
+        const movieCardsRow = document.getElementById("movieCardsRow");
+        const cardHtmlArray = movies.map((movie) => createCard(movie));
+        movieCardsRow.innerHTML = cardHtmlArray.join("");
+      }
+
+      // Fetch data from the API
+      var url = "https://webpt19b.web.app/data/movies.json"
+      var url = "https://api.1rodemayo.com/movies"
+      fetch(url)
+        .then((response) => response.json())
+        .then((data) => renderMovieCards(data))
+        .catch((error) => console.error("Error fetching data:", error));
+    </script>
+  </body>
+</html>

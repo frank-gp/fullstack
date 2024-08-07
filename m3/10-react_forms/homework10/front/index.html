@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <title>REST Client Forms</title>
+    <style>
+      form {
+        margin: 1em;
+        border: 1px solid;
+        padding: 1em;
+        margin-top: 5em;
+      }
+      pre {
+        color: white;
+        font-size: 1.2em;
+        font-family: monospace;
+      }
+      body {
+        display: flex;
+        position: relative;
+      }
+      .positionFixed {
+        position: fixed;
+        top: 0;
+      }
+      .preContainer {
+        /* overflow: scroll; */
+        width: 50vw;
+        height: 100vh;
+        padding: 1vh 3vw  1vh 1vw!important;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container container_pre">
+      <div class="positionFixed">
+        <pre><code class="preContainer hljs language-js"></code></pre>
+      </div>
+    </section>
+
+    <main class="container">
+      <!-- Form for GET /users/ -->
+      <form id="getUsersForm">
+        <button type="submit">GET Users</button>
+      </form>
+
+      <!-- Form for POST /users/register/ -->
+      <form id="registerUserForm">
+        <label for="name">Name:</label><br />
+        <input type="text" id="name" value="Jhon Name" /><br />
+        <label for="username">Username:</label><br />
+        <input type="text" id="username" value="johnUserName" /><br />
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" value="john@example.com" /><br />
+        <label for="birthdate">Birthdate:</label><br />
+        <input type="date" id="birthdate" value="2024-05-04" /><br />
+        <label for="nDni">nDni:</label><br />
+        <input type="number" id="nDni" value="12345678" /><br />
+        <label for="password">Password:</label><br />
+        <input type="password" id="password" value="password123" /><br /><br />
+        <button type="submit">Register</button>
+      </form>
+
+      <!-- Form for POST /users/login -->
+      <form id="loginForm">
+        <label for="loginUsername">Username:</label><br />
+        <input type="text" id="loginUsername" value="johnUserName" /><br />
+        <label for="loginPassword">Password:</label><br />
+        <input type="password" id="loginPassword" value="password123" /><br /><br />
+        <button type="submit">Login</button>
+      </form>
+
+      <!-- Form for GET /turns/ -->
+      <form id="getTurnsForm">
+        <button type="submit">GET Turns</button>
+      </form>
+
+      <!-- Form for POST /turns/schedule/ -->
+      <form id="scheduleTurnForm">
+        <label for="turnDate">Date:</label><br />
+        <input type="date" id="turnDate" value="2024-05-05" /><br />
+        <label for="turnTime">Time:</label><br />
+        <input type="text" id="turnTime" value="10:00 AM" /><br />
+        <label for="userId">User ID:</label><br />
+        <input type="number" id="userId" value="1" /><br /><br />
+        <button type="submit">Schedule Turn</button>
+      </form>
+
+      <!-- Form for PUT /turns/cancel/1 -->
+      <form id="cancelTurnForm">
+        <button type="submit">Cancel Turn</button>
+      </form>
+    </main>
+
+    <script>
+      submitForm("GET", "/users/", null);
+
+      document.getElementById("getUsersForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        submitForm("GET", "/users/", null);
+      });
+
+      document.getElementById("registerUserForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        submitRegisterForm();
+      });
+
+      document.getElementById("loginForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        submitLoginForm();
+      });
+
+      document.getElementById("getTurnsForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        submitForm("GET", "/turns/", null);
+      });
+
+      document.getElementById("scheduleTurnForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        submitScheduleForm();
+      });
+
+      document.getElementById("cancelTurnForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        submitForm("PUT", "/turns/cancel/1", null);
+      });
+
+      function submitForm(method, url, body) {
+        const requestOptions = {
+          method: method,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        };
+
+        if (body) {
+          requestOptions.body = JSON.stringify(body);
+        }
+
+        fetch(url, requestOptions)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log(data);
+            document.querySelector(".preContainer").innerHTML = JSON.stringify(data, null, 2);
+            import("https://frankgp.com/lib/highlight.js?" + new Date());
+          })
+          .catch((error) => console.error("There was a problem with the fetch operation:", error));
+      }
+
+      function submitRegisterForm() {
+        const name = document.getElementById("name").value;
+        const username = document.getElementById("username").value;
+        const email = document.getElementById("email").value;
+        const birthdate = document.getElementById("birthdate").value;
+        const nDni = document.getElementById("nDni").value;
+        const password = document.getElementById("password").value;
+
+        const body = {
+          name: name,
+          username: username,
+          email: email,
+          birthdate: birthdate,
+          nDni: parseInt(nDni),
+          password: password,
+        };
+
+        submitForm("POST", "/users/register/", body);
+      }
+
+      function submitLoginForm() {
+        const username = document.getElementById("loginUsername").value;
+        const password = document.getElementById("loginPassword").value;
+
+        const body = {
+          username: username,
+          password: password,
+        };
+
+        submitForm("POST", "/users/login", body);
+      }
+
+      function submitScheduleForm() {
+        const date = document.getElementById("turnDate").value;
+        const time = document.getElementById("turnTime").value;
+        const userId = document.getElementById("userId").value;
+
+        const body = {
+          date: date,
+          time: time,
+          userId: parseInt(userId),
+        };
+
+        submitForm("POST", "/turns/schedule/", body);
+      }
+    </script>
+  </body>
+</html>

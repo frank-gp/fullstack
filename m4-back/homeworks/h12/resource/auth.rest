@@ -1,0 +1,24 @@
+### signup
+POST http://localhost:3000/auth/signup
+Authorization: Basic: <email>:<password>
+Content-Type: application/json
+
+{
+  "email": "user1@gmail.com",
+  "name": "New User 2",
+  "password": "P4ss123@",
+  "address": "new address",
+  "phone": "987654321",
+  "country": "New Country",
+  "city": "New City"
+}
+
+### signin
+POST http://localhost:3000/auth/signin
+Authorization: Basic: <email>:<password>
+Content-Type: application/json
+
+{
+  "email": "user1@gmail.com",
+  "password": "P4ss123@"
+}

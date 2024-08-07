@@ -1,0 +1,42 @@
+[
+{
+"_id": 1,
+"title": "Granizo 2024",
+"year": 2024,
+"director": "Director Name",
+"duration": "2h 15min",
+"genre": [
+"Action",
+"Thriller",
+"Sci-Fi"
+],
+"rate": 6.2,
+"poster": "https://i.postimg.cc/zBx6hHT9/granizo.webp"
+},
+{
+"_id": 2,
+"title": "Natural born killers",
+"year": 1994,
+"director": "Oliver Stone",
+"duration": "1h 59min",
+"genre": [
+"Action",
+"Crime"
+],
+"rate": 7.2,
+"poster": "https://i.postimg.cc/BbkwxM0R/born-killers.webp"
+},
+{
+"_id": 3,
+"title": "Ted",
+"year": 2012,
+"director": "Seth MacFarlane",
+"duration": "1h 46min",
+"genre": [
+"Comedy",
+"Fantasy"
+],
+"rate": 6.9,
+"poster": "https://i.postimg.cc/qq9mcsqZ/ted.webp"
+}
+]

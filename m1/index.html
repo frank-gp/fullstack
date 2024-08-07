@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://frankgp.com/component/stat.js" type="module"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script src="scripts/index.js" defer></script>
+
+    <title>My web site</title>
+  </head>
+  <body>
+    <header class="block display_none">
+      <h2><a href="/">My Site</a></h2>
+      <nav>
+        <a href="#about">about</a>
+        <a href="#tech">tech</a>
+        <a href="#activities">activities</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="about" class="display_none">
+        <img class="about_profile" src="//source.unsplash.com/180x180?people,profile" alt="" />
+        <h2>about</h2>
+        <p class="about_description">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta ea vero alias tempora quod aspernatur, excepturi, veniam quasi doloribus praesentium optio dolore quae
+          facilis! Voluptate eius vel neque maxime at.
+        </p>
+      </section>
+      <section id="tech" class="display_none">
+        <h2>MY FAVORITES TECHOLOGIES</h2>
+        <div class="card_container">
+          <!-- html -->
+          <article class="card_item">
+            <img class="card_img" src="https://i.postimg.cc/WbQv8DD7/html.png" alt="" />
+            <h3>html</h3>
+          </article>
+          <!-- css -->
+          <article class="card_item">
+            <img class="card_img" src="https://i.postimg.cc/cCzNVCF0/css.png" alt="" />
+            <h3>css</h3>
+          </article>
+          <!-- js -->
+          <article class="card_item">
+            <img class="card_img" src="https://i.postimg.cc/sfHyBHsq/js.png" alt="" />
+            <h3>js</h3>
+          </article>
+        </div>
+      </section>
+      <section id="activities">
+        <h2>MY FAVORITES ACTIVITIES</h2>
+        <form action="" class="activities_form">
+          <input type="text" id="titleInput" placeholder="Title" />
+          <textarea id="descriptionInput" rows="5" placeholder="Description"></textarea>
+          <input type="text" id="urlInput" placeholder="URL image" />
+          <div><button class="btn" id="addActivity">Add Activity</button></div>
+        </form>
+
+        <b></b>
+        <div class="card_container" id="cardContainer"></div>
+
+        <!-- ========== demo template ========== -->
+        <template id="cardTemplate">
+          <!-- item -->
+          <article class="card_item">
+            <img class="card_img" alt="" />
+            <h3 class="title"></h3>
+            <p class="description"></p>
+            <button class="btn">Delete</button>
+          </article>
+        </template>
+      </section>
+    </main>
+    <footer class="block">
+      <p>Create by FGP</p>
+    </footer>
+  </body>
+</html>

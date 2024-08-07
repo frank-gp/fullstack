@@ -1,0 +1,48 @@
+### ========== USERS ==========
+###
+GET http://localhost:3000/users
+token: 1234
+
+###
+GET http://localhost:3000/users/1
+token: 1234
+
+###
+GET http://localhost:3000/users?name=Bartolomaiu
+token: 1234
+
+###
+GET http://localhost:3000/users/profile/
+token: 1234
+###
+GET http://localhost:3000/users/profile/images
+token: 1234
+
+###
+GET http://localhost:3000/users/coffee
+###
+GET http://localhost:3000/users/message
+###
+GET http://localhost:3000/users/request
+###
+###
+###
+###
+###
+POST http://localhost:3000/users
+Content-Type: application/json
+token: 1234
+
+{
+    "name": "Frank",
+    "email": "email@mail.com"
+}
+
+###
+PUT http://localhost:3000/users
+###
+DELETE http://localhost:3000/users
+
+### ========== TODOS ==========
+GET http://localhost:3000/todos
+# token: 1234

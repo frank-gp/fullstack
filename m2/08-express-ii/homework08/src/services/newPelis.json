@@ -1,0 +1,270 @@
+[
+  {
+    "title": "Silicon Valley",
+    "year": 2014,
+    "creator": "Mike Judge, John Altschuler, Dave Krinsky",
+    "genre": ["Comedy"],
+    "rate": 8.5,
+    "poster": "https://pics.filmaffinity.com/silicon_valley-787580757-large.jpg"
+  },
+  {
+    "title": "The Dark Knight",
+    "year": 2008,
+    "director": "Christopher Nolan",
+    "duration": "2h 32min",
+    "genre": ["Action", "Crime", "Drama"],
+    "rate": 9,
+    "poster": "https://i.postimg.cc/yxMKhX08/the-dark-knight.webp"
+  },
+  {
+    "title": "Spider-Man 2",
+    "year": 2004,
+    "director": "Sam Raimi",
+    "duration": "2h 7min",
+    "genre": ["Action", "Adventure", "Sci-Fi"],
+    "rate": 7.3,
+    "poster": "https://pics.filmaffinity.com/spider_man_2-876729560-large.jpg"
+  },
+  {
+    "title": "The Lord of the Rings",
+    "year": 2001,
+    "director": "Peter Jackson",
+    "duration": "2h 58min",
+    "genre": ["Action", "Adventure", "Drama", "Fantasy"],
+    "rate": 8.8,
+    "poster": "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SX300.jpg"
+  },
+  {
+    "title": "Guardians of the Galaxy",
+    "year": 2017,
+    "director": "James Gunn",
+    "duration": "2h 16min",
+    "genre": ["Action", "Adventure", "Comedy"],
+    "rate": 7.7,
+    "poster": "https://m.media-amazon.com/images/M/MV5BNjM0NTc0NzItM2FlYS00YzEwLWE0YmUtNTA2ZWIzODc2OTgxXkEyXkFqcGdeQXVyNTgwNzIyNzg@._V1_SX300.jpg"
+  },
+  {
+    "title": "Inception",
+    "year": 2010,
+    "director": "Christopher Nolan",
+    "duration": "2h 28min",
+    "genre": ["Action", "Adventure", "Sci-Fi", "Thriller"],
+    "rate": 8.8,
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg"
+  },
+  {
+    "title": "Cómo Entrenar A Tu Dragón",
+    "year": 2010,
+    "director": "Dean DeBlois, Chris Sanders",
+    "duration": "1h 38min",
+    "genre": ["Animation", "Action", "Adventure"],
+    "rate": 8.1,
+    "poster": "https://pics.filmaffinity.com/how_to_train_your_dragon-577181358-large.jpg"
+  },
+  {
+    "title": "Coco",
+    "year": 2017,
+    "director": "Lee Unkrich, Adrian Molina",
+    "duration": "1h 45min",
+    "genre": ["Animation", "Adventure", "Family"],
+    "rate": 8.4,
+    "poster": "https://pics.filmaffinity.com/coco-155051069-large.jpg"
+  },
+  {
+    "title": "Requiem for a dream",
+    "year": 2000,
+    "director": "Darren Aronofsky",
+    "duration": "1h 42min",
+    "genre": ["Terror", "Drama"],
+    "rate": 8.3,
+    "poster": "https://m.media-amazon.com/images/I/71-hosIpwkL._AC_UF894,1000_QL80_.jpg"
+  },
+  {
+    "title": "Super Mario Bros",
+    "year": 2023,
+    "director": "Aaron Horvath, Michael Jelenic",
+    "duration": "1h 57min",
+    "genre": ["Animation", "Adventure", "Comedy"],
+    "rate": 6.5,
+    "poster": "https://pics.filmaffinity.com/the_super_mario_bros_movie-521125124-large.jpg"
+  },
+  {
+    "title": "Titanic",
+    "year": 1997,
+    "director": "James Cameron",
+    "duration": "3h 14min",
+    "genre": ["Drama", "Romance"],
+    "rate": 7.8,
+    "poster": "https://pics.filmaffinity.com/titanic-321994924-large.jpg"
+  },
+  {
+    "title": "Soul",
+    "year": 2020,
+    "director": "Pete Docter, Kemp Powers",
+    "duration": "1h 40min",
+    "genre": ["Animation", "Adventure", "Comedy"],
+    "rate": 8.1,
+    "poster": "https://pics.filmaffinity.com/soul-557797463-large.jpg"
+  },
+  {
+    "title": "Zootopia",
+    "year": 2016,
+    "director": "Byron Howard, Rich Moore, Jared Bush",
+    "duration": "1h 48min",
+    "genre": ["Animation", "Adventure", "Comedy"],
+    "rate": 8,
+    "poster": "https://pics.filmaffinity.com/zootopia-155827662-large.jpg"
+  },
+  {
+    "title": "The Matrix",
+    "year": 1999,
+    "director": "Lana Wachowski, Lilly Wachowski",
+    "duration": "2h 16min",
+    "genre": ["Action", "Sci-Fi"],
+    "rate": 8.7,
+    "poster": "https://m.media-amazon.com/images/I/51EG732BV3L._AC_.jpg"
+  },
+  {
+    "title": "Avatar",
+    "year": 2009,
+    "director": "James Cameron",
+    "duration": "2h 42min",
+    "genre": ["Action", "Adventure", "Fantasy", "Sci-Fi"],
+    "rate": 7.8,
+    "poster": "https://i.postimg.cc/vTgM6SgK/avatar.webp"
+  },
+  {
+    "title": "The Avengers",
+    "year": 2012,
+    "director": "Joss Whedon",
+    "duration": "2h 23min",
+    "genre": ["Action", "Adventure", "Sci-Fi"],
+    "rate": 8,
+    "poster": "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
+  },
+  {
+    "title": "Rango",
+    "year": 2011,
+    "director": "Gore Verbinski",
+    "duration": "1h 47min",
+    "genre": ["Animation", "Adventure", "Comedy"],
+    "rate": 7.2,
+    "poster": "https://pics.filmaffinity.com/rango-570593002-large.jpg"
+  },
+  {
+    "title": "Mr. Robot",
+    "year": 2015,
+    "creator": "Sam Esmail",
+    "genre": ["Crime", "Drama", "Thriller"],
+    "rate": 8.6,
+    "poster": "https://pics.filmaffinity.com/mr_robot-978107021-large.jpg"
+  },
+  {
+    "title": "Interstellar",
+    "year": 2014,
+    "director": "Christopher Nolan",
+    "duration": "2h 49min",
+    "genre": ["Adventure", "Drama", "Sci-Fi"],
+    "rate": 8.6,
+    "poster": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
+  },
+  {
+    "title": "Click",
+    "year": 2006,
+    "director": "Frank Coraci",
+    "duration": "1h 47min",
+    "genre": ["Comedy", "Drama", "Fantasy"],
+    "rate": 6.4,
+    "poster": "https://pics.filmaffinity.com/click-924581501-large.jpg"
+  },
+  {
+    "title": "Madame Web",
+    "year": 2024,
+    "director": "S.J. Clarkson",
+    "duration": "116 min.",
+    "genre": ["Fantástico", "Acción", "Ciencia ficción"],
+    "rate": 5.1,
+    "poster": "https://pics.filmaffinity.com/madame_web-759178425-large.jpg"
+  },
+  {
+    "title": "Pirates of the Caribbean",
+    "year": 2003,
+    "director": "Gore Verbinski",
+    "duration": "2h 23min",
+    "genre": ["Action", "Adventure", "Fantasy"],
+    "rate": 8,
+    "poster": "https://pics.filmaffinity.com/pirates_of_the_caribbean_on_stranger_tides-755499916-large.jpg"
+  },
+  {
+    "title": "Kung Fu Panda 4",
+    "year": 2024,
+    "director": "Jennifer Yuh Nelson",
+    "duration": "TBD",
+    "genre": ["Animation", "Action", "Adventure"],
+    "rate": 5.1,
+    "poster": "https://pics.filmaffinity.com/kung_fu_panda_4-159494298-large.jpg"
+  },
+  {
+    "title": "The figth club",
+    "year": 1999,
+    "director": "David Fincher",
+    "duration": "2h 19min",
+    "genre": ["Suspense", "Action"],
+    "rate": 8.1,
+    "poster": "https://codigof.mx/wp-content/uploads/2018/08/ClubPeleaCF.jpg"
+  },
+  {
+    "title": "The Silence of the Lambs",
+    "year": 1991,
+    "director": "Jonathan Demme",
+    "duration": "1h 58min",
+    "genre": ["Crime", "Drama", "Thriller"],
+    "rate": 8.6,
+    "poster": "https://i.postimg.cc/3rV3H7zQ/the-silence-of-the-lambs.webp"
+  },
+  {
+    "title": "Granizo 2024",
+    "year": 2024,
+    "director": "Director Name",
+    "duration": "2h 15min",
+    "genre": ["Action", "Thriller", "Sci-Fi"],
+    "rate": 6.2,
+    "poster": "https://pics.filmaffinity.com/granizo-289420713-large.jpg"
+  },
+  {
+    "title": "Ted",
+    "year": 2012,
+    "director": "Seth MacFarlane",
+    "duration": "1h 46min",
+    "genre": ["Comedy", "Fantasy"],
+    "rate": 6.9,
+    "poster": "https://pics.filmaffinity.com/ted-632757357-large.jpg"
+  },
+  {
+    "title": "La La Land",
+    "year": 2016,
+    "director": "Damien Chazelle",
+    "duration": "2h 8min",
+    "genre": ["Drama", "Music", "Romance"],
+    "rate": 8,
+    "poster": "https://pics.filmaffinity.com/la_la_land-262021831-large.jpg"
+  },
+  {
+    "title": "One Piece",
+    "year": 2023,
+    "director": "Tatsuya Nagamine",
+    "duration": "2h 20min",
+    "genre": ["Animation", "Action", "Adventure"],
+    "rate": 8.3,
+    "poster": "https://pics.filmaffinity.com/one_piece-985097858-large.jpg"
+  },
+  {
+    "title": "Natural born killers",
+    "year": 1994,
+    "director": "Oliver Stone",
+    "duration": "1h 59min",
+    "genre": ["Action", "Crime"],
+    "rate": 7.2,
+    "poster": "https://m.media-amazon.com/images/M/MV5BNGNjNjU1YmEtZGM5MC00ODgzLWEyY2MtZmZmNTlhOGU4OWJjXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_FMjpg_UX1000_.jpg"
+  }
+]

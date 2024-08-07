@@ -1,0 +1,8 @@
+{
+  "name": "Demo User",
+  "email": "demo@example.com",
+  "birthdate": "1990-01-01",
+  "nDni": "12345678",
+  "username": "demo_user",
+  "password": "demo_password"
+}

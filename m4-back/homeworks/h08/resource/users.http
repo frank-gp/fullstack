@@ -1,0 +1,46 @@
+
+# ==================== USERS ====================
+
+## Create a new user
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "email": "newuser@gmail.com",
+  "name": "New User",
+  "password": "P4ss123@",
+  "address": "new address",
+  "phone": "987654321",
+  "country": "New Country",
+  "city": "New City"
+}
+
+### Get all users (with pagination) - Requires Authorization
+GET http://localhost:3000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1YjExY2RlZC1jZjFlLTQxMjktOGJjNi02NTQ0ODhkYzUwNzkiLCJpZCI6IjViMTFjZGVkLWNmMWUtNDEyOS04YmM2LTY1NDQ4OGRjNTA3OSIsImVtYWlsIjoidXNlcjFAZ21haWwuY29tIiwiaWF0IjoxNzE5MTA5MjUyLCJleHAiOjE3MTk5NzMyNTJ9.YmXS2MRz_dcHFIOPRSWbXhsAdMAqg5H2oHafLiZLg_c
+
+### Get all users (with pagination) - Requires Authorization
+GET http://localhost:3000/users?page=1&limit=1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1YjExY2RlZC1jZjFlLTQxMjktOGJjNi02NTQ0ODhkYzUwNzkiLCJpZCI6IjViMTFjZGVkLWNmMWUtNDEyOS04YmM2LTY1NDQ4OGRjNTA3OSIsImVtYWlsIjoidXNlcjFAZ21haWwuY29tIiwiaWF0IjoxNzE5MTA5MjUyLCJleHAiOjE3MTk5NzMyNTJ9.YmXS2MRz_dcHFIOPRSWbXhsAdMAqg5H2oHafLiZLg_c
+
+### Get a specific user by ID - Requires Authorization
+GET http://localhost:3000/users/275b6c86-504a-4ce1-8b1b-3a8616f1fe1f
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1YjExY2RlZC1jZjFlLTQxMjktOGJjNi02NTQ0ODhkYzUwNzkiLCJpZCI6IjViMTFjZGVkLWNmMWUtNDEyOS04YmM2LTY1NDQ4OGRjNTA3OSIsImVtYWlsIjoidXNlcjFAZ21haWwuY29tIiwiaWF0IjoxNzE5MTA5MjUyLCJleHAiOjE3MTk5NzMyNTJ9.YmXS2MRz_dcHFIOPRSWbXhsAdMAqg5H2oHafLiZLg_c
+
+### Update a user by ID - Requires Authorization
+PUT http://localhost:3000/users/275b6c86-504a-4ce1-8b1b-3a8616f1fe1f
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1YjExY2RlZC1jZjFlLTQxMjktOGJjNi02NTQ0ODhkYzUwNzkiLCJpZCI6IjViMTFjZGVkLWNmMWUtNDEyOS04YmM2LTY1NDQ4OGRjNTA3OSIsImVtYWlsIjoidXNlcjFAZ21haWwuY29tIiwiaWF0IjoxNzE5MTA5MjUyLCJleHAiOjE3MTk5NzMyNTJ9.YmXS2MRz_dcHFIOPRSWbXhsAdMAqg5H2oHafLiZLg_c
+Content-Type: application/json
+
+{
+  "name": "Updated User",
+  "address": "updated address",
+  "phone": "123456789",
+  "country": "Updated Country",
+  "city": "Updated City"
+}
+
+### Delete a user by ID - Requires Authorization
+DELETE http://localhost:3000/users/275b6c86-504a-4ce1-8b1b-3a8616f1fe1f
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1YjExY2RlZC1jZjFlLTQxMjktOGJjNi02NTQ0ODhkYzUwNzkiLCJpZCI6IjViMTFjZGVkLWNmMWUtNDEyOS04YmM2LTY1NDQ4OGRjNTA3OSIsImVtYWlsIjoidXNlcjFAZ21haWwuY29tIiwiaWF0IjoxNzE5MTA5MjUyLCJleHAiOjE3MTk5NzMyNTJ9.YmXS2MRz_dcHFIOPRSWbXhsAdMAqg5H2oHafLiZLg_c
+

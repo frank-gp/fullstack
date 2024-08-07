@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appointment Management</title>
+    <style>
+      .w100 {
+        width: 100%;
+        max-width: 40rem;
+      }
+      form {
+        border-bottom: 1px solid #000;
+        padding: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Appointment Management</h1>
+
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="url" name="" id="usersLoginUrl" value="http://localhost:3000/users/login" class="w100" />
+      <br /><br />
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" value="john@example.com" required /><br /><br />
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" value="password123" required /><br /><br />
+      <button type="submit">Login User</button>
+    </form>
+
+    <h2>Register User</h2>
+    <form id="registerForm">
+      <input type="url" name="" id="usersregisterUrl" value="http://127.0.0.1:3000/users/register" class="w100" />
+      <br /><br />
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required value="New User" /><br /><br />
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required value="user@mail.com" /><br /><br />
+      <label for="birthdate">Birthdate:</label>
+      <input type="date" id="birthdate" name="birthdate" require value="1990-01-01" /><br /><br />
+      <label for="nDni">DNI:</label>
+      <input type="text" id="nDni" name="nDni" required value="12345678" /><br /><br />
+      <label for="registerUsername">Username:</label>
+      <input type="text" id="registerUsername" name="registerUsername" value="user@mail.com" required /><br /><br />
+      <label for="registerPassword">Password:</label>
+      <input type="password" id="registerPassword" name="registerPassword" required value="user@mail.com" /><br /><br />
+      <button type="submit">Register User</button>
+    </form>
+
+    <h2>Schedule Appointment</h2>
+    <form id="scheduleForm">
+      <input type="url" name="" id="usersScheduleUrl" value="http://localhost:3000/turns/schedule" class="w100" />
+      <br /><br />
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required value="2022-01-01" /><br /><br />
+      <label for="time">Time:</label>
+      <input type="time" id="time" name="time" required value="10:00" /><br /><br />
+      <button type="submit">Add Schedule</button>
+    </form>
+
+    <h2>Cancel Appointment</h2>
+    <form id="cancelForm">
+      <input type="url" name="" id="usersCancelUrl" value="http://localhost:3000/turns/cancel/1" class="w100" />
+      <br />
+      <br />
+      <label for="appointmentId">Appointment ID:</label>
+      <input type="number" id="appointmentId" name="appointmentId" required value="1" /><br /><br />
+      <button type="submit">Cancel Appointment</button>
+    </form>
+
+    <br />
+    <hr />
+    <h2>Get All Users</h2>
+    <input type="url" name="" id="getAllUsersUrl" value="http://localhost:3000/users" class="w100" />
+    <br />
+    <br />
+    <button id="getAllUsersButton">Get All Users</button>
+    <br />
+    <br />
+    <div id="userList"></div>
+    <br />
+    <hr />
+    <h2>Get All Appointments</h2>
+    <br />
+    <input type="url" name="" id="getAllAppointmentsUrl" value="http://localhost:3000/turns" class="w100" />
+    <br />
+    <br />
+    <button id="getAllAppointmentsButton">Get All Appointments</button>
+    <br />
+    <br />
+    <div id="appointmentList"></div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <script>
+      // Función para enviar una solicitud POST para iniciar sesión
+      document.getElementById("loginForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        const usersLoginUrl = document.getElementById("usersLoginUrl").value;
+        const response = await fetch(usersLoginUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ username, password }),
+        });
+        const data = await response.json();
+        console.log(data);
+      });
+
+      // Función para enviar una solicitud POST para registrar un nuevo usuario
+      document.getElementById("registerForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const birthdate = document.getElementById("birthdate").value;
+        const nDni = document.getElementById("nDni").value;
+        const registerUsername = document.getElementById("registerUsername").value;
+        const registerPassword = document.getElementById("registerPassword").value;
+        const usersRegisterUrl = document.getElementById("usersregisterUrl").value;
+        const response = await fetch(usersRegisterUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ name, email, birthdate, nDni, username: registerUsername, password: registerPassword }),
+        });
+        const data = await response.json();
+        console.log(data);
+      });
+
+      // Función para enviar una solicitud POST para programar un nuevo turno
+      document.getElementById("scheduleForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const date = document.getElementById("date").value;
+        const time = document.getElementById("time").value;
+        const userId = 1; // ID del usuario (puede obtenerse después de iniciar sesión)
+        const usersScheduleUrl = document.getElementById("usersScheduleUrl").value;
+        const response = await fetch(usersScheduleUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ date, time, userId }),
+        });
+        const data = await response.json();
+        console.log(data);
+      });
+
+      // Función para enviar una solicitud PUT para cancelar un turno
+      document.getElementById("cancelForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const appointmentId = document.getElementById("appointmentId").value;
+        const usersCancelUrl = document.getElementById("usersCancelUrl").value;
+        const response = await fetch(usersCancelUrl, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ id: appointmentId }),
+        });
+        const data = await response.json();
+        console.log(data);
+      });
+
+      // Función para obtener todos los usuarios
+      document.getElementById("getAllUsersButton").addEventListener("click", async () => {
+        const getAllUsersUrl = document.getElementById("getAllUsersUrl").value;
+        const response = await fetch(getAllUsersUrl);
+        const users = await response.json();
+        const userList = document.getElementById("userList");
+        userList.innerHTML = "";
+        users.forEach((user) => {
+          const userElement = document.createElement("div");
+          userElement.textContent = `ID: ${user.id}, Name: ${user.name}, Email: ${user.email}, Birthdate: ${user.birthdate}, DNI: ${user.nDni}`;
+          userList.appendChild(userElement);
+        });
+      });
+
+      // Función para obtener todos los turnos
+      document.getElementById("getAllAppointmentsButton").addEventListener("click", async () => {
+        const getAllAppointmentsUrl = document.getElementById("getAllAppointmentsUrl").value;
+        const response = await fetch(getAllAppointmentsUrl);
+        const appointments = await response.json();
+        const appointmentList = document.getElementById("appointmentList");
+        appointmentList.innerHTML = "";
+        appointments.forEach((appointment) => {
+          const appointmentElement = document.createElement("div");
+          appointmentElement.textContent = `ID: ${appointment.id}, Date: ${appointment.date}, Time: ${appointment.time}, User ID: ${appointment.userId}, Status: ${appointment.status}`;
+          appointmentList.appendChild(appointmentElement);
+        });
+      });
+    </script>
+  </body>
+</html>

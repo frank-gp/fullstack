@@ -1,0 +1,22 @@
+.mis_turnos {
+  align-items: center;
+  background-color: #f5f5f5;
+  box-sizing: border-box;
+  color: #333;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: Arial, sans-serif;
+  gap: 1em;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  top: 0;
+}
+.title {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.5em;
+  margin: 0.5em;
+  margin-top: 2em;
+}

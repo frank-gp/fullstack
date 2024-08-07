@@ -1,0 +1,55 @@
+# PRODUCTS
+
+### Create a new product
+POST http://localhost:3000/products/seeder
+
+### Create a new product
+POST http://localhost:3000/products
+Authorization: Basic: <email>:<password>
+Content-Type: application/json
+
+{
+  "name": "New Product 2",
+  "description": "A new product",
+  "price": 500,
+  "stock": 1,
+  "category": "smartphone",
+  "imgUrl": "new-url"
+}
+
+###
+
+### Get all products (with pagination)
+GET http://localhost:3000/products?page=1&limit=3
+
+### Get all products
+GET http://localhost:3000/products
+
+###
+
+## Get a specific product by ID
+GET http://localhost:3000/products/1
+
+###
+
+## Update a product by ID
+PUT http://localhost:3000/products/1
+Authorization: Basic: <email>:<password>
+Content-Type: application/json
+
+{
+  "name": "Updated Product",
+  "description": "Updated description",
+  "price": 600,
+  "stock": false,
+  "imgUrl": "updated-url"
+}
+
+###
+
+## Delete a product by ID
+DELETE http://localhost:3000/products/1
+Authorization: Basic: <email>:<password>
+
+
+###

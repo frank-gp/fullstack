@@ -1,0 +1,68 @@
+### ========== USERS ==========
+### signup
+POST http://localhost:3000/users/signup
+Content-Type: application/json
+token: 1234
+
+{
+    "name": "Frank",
+    "email": "email@mail.com",
+    "password": "password"
+}
+
+### signin
+POST http://localhost:3000/users/signin
+Content-Type: application/json
+
+{
+    "email": "email@mail.com",
+    "password": "password"
+}
+
+###
+GET http://localhost:3000/users/admin/
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlOTUzYWQzYy03MGFhLTQ1MTUtOGE0NS1mNzdiNDdmYjYxMzUiLCJpZCI6ImU5NTNhZDNjLTcwYWEtNDUxNS04YTQ1LWY3N2I0N2ZiNjEzNSIsImVtYWlsIjoiZW1haWxAbWFpbC5jb20iLCJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE3MTkyNDU5ODcsImV4cCI6MTcyMDEwOTk4N30.GisKQp7N0eLuTYNtj2g_pB1GP4F1lExFzGF93Yz1wS8
+
+###
+GET http://localhost:3000/users/auth0/protected
+# authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlYWVkMjc0My04NzdmLTRiYjktYmIwNC0yNGE2MTdhZTUzY2YiLCJpZCI6ImVhZWQyNzQzLTg3N2YtNGJiOS1iYjA0LTI0YTYxN2FlNTNjZiIsImVtYWlsIjoiZW1haWxAbWFpbC5jb20iLCJyb2xlcyI6WyJ1c2VyIl0sImlhdCI6MTcxOTE0Njg2MiwiZXhwIjoxNzIwMDEwODYyfQ.v3v0ReT_i1iNcdtgHa8vKwV4BRGX2p0yY9Nf33HnlqE
+
+###
+GET http://localhost:3000/users
+token: 1234
+
+###
+GET http://localhost:3000/users/7a2551bc-8668-4955-80c5-2dcd3c91a26b
+token: 1234
+
+###
+GET http://localhost:3000/users?name=Bartolomaiu
+token: 1234
+
+###
+GET http://localhost:3000/users/profile/
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjM2MwYTRlMy03ZGQ5LTQ2ZjgtYjYxMC02ODgyZjhjOWJlNDkiLCJpZCI6ImMzYzBhNGUzLTdkZDktNDZmOC1iNjEwLTY4ODJmOGM5YmU0OSIsImVtYWlsIjoiZW1haWxAbWFpbC5jb20iLCJpYXQiOjE3MTkwOTE5ODAsImV4cCI6MTcxOTk1NTk4MH0.8PORJqdhIyjIJECV1FS8m-0OxoPLUnZ5bbPcSZaPvF4
+
+
+###
+GET http://localhost:3000/users/profile/images
+token: 1234
+
+###
+GET http://localhost:3000/users/coffee
+token: 1234
+###
+GET http://localhost:3000/users/message
+###
+GET http://localhost:3000/users/request
+###
+###
+###
+###
+
+
+
+###
+PUT http://localhost:3000/users
+###
+DELETE http://localhost:3000/users

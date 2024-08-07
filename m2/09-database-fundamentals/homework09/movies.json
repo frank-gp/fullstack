@@ -1,0 +1,122 @@
+[
+    {
+        "_id": 1,
+        "Título": "Madame Web",
+        "Año": 2024,
+        "Duración": "116 min.",
+        "Rate": 5.1,
+        "Póster": "https://example.com/madame.webp",
+        "ID_Director": 1,
+        "ID_Género": "1,2,3"
+    },
+    {
+        "_id": 2,
+        "Título": "The Matrix",
+        "Año": 1999,
+        "Duración": "136 min.",
+        "Rate": 8.7,
+        "Póster": "https://example.com/matrix.webp",
+        "ID_Director": 2,
+        "ID_Género": "2,3"
+    },
+    {
+        "_id": 3,
+        "Título": "Forrest Gump",
+        "Año": 1994,
+        "Duración": "142 min.",
+        "Rate": 8.8,
+        "Póster": "https://example.com/forrest-gump.webp",
+        "ID_Director": 3,
+        "ID_Género": "4,5"
+    },
+    {
+        "_id": 4,
+        "Título": "Inception",
+        "Año": 2010,
+        "Duración": "148 min.",
+        "Rate": 8.8,
+        "Póster": "https://example.com/inception.webp",
+        "ID_Director": 4,
+        "ID_Género": "2,6,3"
+    },
+    {
+        "_id": 5,
+        "Título": "Pulp Fiction",
+        "Año": 1994,
+        "Duración": "154 min.",
+        "Rate": 8.9,
+        "Póster": "https://example.com/pulp-fiction.webp",
+        "ID_Director": 5,
+        "ID_Género": "7,4"
+    },
+    {
+        "_id": 6,
+        "Título": "The Shawshank Redemption",
+        "Año": 1994,
+        "Duración": "142 min.",
+        "Rate": 9.3,
+        "Póster": "https://example.com/shawshank-redemption.webp",
+        "ID_Director": 6,
+        "ID_Género": "4"
+    },
+    {
+        "_id": 7,
+        "Título": "The Godfather",
+        "Año": 1972,
+        "Duración": "175 min.",
+        "Rate": 9.2,
+        "Póster": "https://example.com/godfather.webp",
+        "ID_Director": 7,
+        "ID_Género": "7"
+    },
+    {
+        "_id": 8,
+        "Título": "The Dark Knight",
+        "Año": 2008,
+        "Duración": "152 min.",
+        "Rate": 9.0,
+        "Póster": "https://example.com/dark-knight.webp",
+        "ID_Director": 4,
+        "ID_Género": "2,7,4"
+    },
+    {
+        "_id": 9,
+        "Título": "Interstellar",
+        "Año": 2014,
+        "Duración": "169 min.",
+        "Rate": 8.6,
+        "Póster": "https://example.com/interstellar.webp",
+        "ID_Director": 4,
+        "ID_Género": "6,4"
+    },
+    {
+        "_id": 10,
+        "Título": "The Wachowski Brothers",
+        "Año": 2003,
+        "Duración": "129 min.",
+        "Rate": 7.2,
+        "Póster": "https://example.com/matrix-reloaded.webp",
+        "ID_Director": 2,
+        "ID_Género": "2,6"
+    },
+    {
+        "_id": 11,
+        "Título": "The Coen Brothers",
+        "Año": 1998,
+        "Duración": "117 min.",
+        "Rate": 8.1,
+        "Póster": "https://example.com/the-big-lebowski.webp",
+        "ID_Director": 3,
+        "ID_Género": "7,4"
+    },
+    {
+        "_id": 12,
+        "Título": "Quentin Tarantino",
+        "Año": 2009,
+        "Duración": "153 min.",
+        "Rate": 8.3,
+        "Póster": "https://example.com/inglourious-basterds.webp",
+        "ID_Director": 5,
+        "ID_Género": "8,4"
+    }
+]

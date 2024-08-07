@@ -1,0 +1,18 @@
+.turno {
+  display: flex;
+  gap: 1em;
+  border: 1px solid #000;
+  padding: 1em;
+  margin: 1em;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  color: #333;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  width: 300px;
+  height: 300px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}

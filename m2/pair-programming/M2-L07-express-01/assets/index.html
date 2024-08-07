@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <!-- <link rel="stylesheet" href="./styles.css" /> -->
+    <style>
+      .doc_item {
+        margin-bottom: 1em;
+      }
+      section {
+        border: 1px solid #fff8;
+        padding: 1em;
+        margin: 1em auto;
+      }
+      main {
+        max-width: 50rem !important;
+        margin: 1em auto;
+      }
+      .d_none {
+        display: none;
+      }
+    </style>
+    <title>Express 1 | Pair Programming</title>
+  </head>
+  <body>
+    <main class="container">
+      <!-- ========== title ========== -->
+      <section class="title">
+        <h1>Express 1 | Pair Programming</h1>
+        <a role="button" href="https://fgp.one/discord_soyhenry" class="contrast" target="_blank">Discord </a>
+      </section>
+
+      <!-- ========== doc ========== -->
+      <section class="doc_container">
+        <article>
+          <div class="doc_item">
+            <a href="https://host.fgp.one/" target="_blank">https://host.fgp.one/</a>
+            <span>documentacion en directo</span>
+          </div>
+          <div class="doc_item">
+            <a href="https://front.fgp.one/" target="_blank">https://front.fgp.one/</a>
+            <span>archivos en directo (codigo)</span>
+          </div>
+        </article>
+        <article class="article_backend d_none">
+          <div class="doc_item">
+            <a href="https://back.fgp.one/" target="_blank">https://back.fgp.one/</a>
+            <span>backend root</span>
+          </div>
+          <div class="doc_item">
+            <a href="https://back.fgp.one/movies" target="_blank">https://back.fgp.one/movies</a>
+            <span>api Movies</span>
+          </div>
+          <div class="doc_item">
+            <a href="./tempData.js" target="_blank">tempData.js</a>
+            <span>base de datos (array)</span>
+            <a href="./tempData.js" target="_blank" download="">download</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ========== section 0: basic ========== -->
+      <section class="section_0">
+        <article class="command">
+          <h3>Commands</h3>
+          <pre><code class="hljs language-bash">
+# Inicializar proyecto node | creacion de packge.json
+npm init -y
+
+# instalacion de express
+npm install express
+
+# instalacion de nodemon en modo dependencia
+npm install -D nodemon
+
+# ejecucion del servidor con node --watch
+node --watch index.js
+
+# ejecucion del servidor con package.json
+npm start
+npm run nodemon
+npm run dev
+
+</code></pre>
+        </article>
+        <article class="command d_none">
+          <h3>package.json</h3>
+          <pre><code class="hljs language-json">
+{
+  "name": "m2-l07-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "nodemon": "nodemon index.js",
+    "dev": "node --watch index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
+
+</code></pre>
+        </article>
+        <article class="article_server">
+          <h3>0: Server Basic</h3>
+          <pre><code class="hljs language-javascript">
+const express = require("express");
+
+const app = express();
+
+app.listen(3000);
+</code></pre>
+        </article>
+      </section>
+
+      <!-- ========== section 1: API ========== -->
+      <section class="section_1">
+        <!-- ----- 1: API Basic -->
+        <article class="article_1 d_none">
+          <h3>1: API Basic</h3>
+          <pre><code>
+const express = require("express");
+const tempData = require("./tempData.js");
+
+const app = express();
+
+app.get("/", (req, res) => {
+res.send("Hello World! | movies 1");
+});
+
+app.get("/movies", (req, res) => {
+res.json(tempData);
+});
+
+app.listen(3000, () => {
+console.log("Server movies-1 in http://localhost:3000");
+});
+
+</code></pre>
+        </article>
+
+        <!-- ----- 2: API -->
+
+        <article class="article_2 d_none">
+          <h3>1.2: API Controller-Service architecture</h3>
+          <pre><code>
+// services
+function getMoviesServices() {
+const tempData = require("./tempData.js");
+return tempData;
+}
+
+// controllers
+const helloWordController = (req, res) => {
+res.send("Hello World! | movies-1/index-mvc");
+};
+
+const getMoviesController = (req, res) => {
+const movies = getMoviesServices();
+res.json(movies);
+};
+
+// routes
+const { Router } = require("express");
+const router = Router();
+
+router.get("/", helloWordController);
+router.get("/movies", getMoviesController);
+
+// server
+const express = require("express");
+const app = express();
+app.use("/", router);
+
+app.listen(3000, () => {
+console.log("Server movies-1/index-mvc in http://localhost:3000");
+});
+
+</code></pre>
+        </article>
+      </section>
+
+      <!-- ========== section 2: Routes ========== -->
+      <section class="section_2">
+        <!-- ----- 1: API Basic -->
+        <article class="article_1 d_none">
+          <h3>2: Routes</h3>
+          <pre><code class="hljs language-javascript">
+const express = require("express");
+const tempData = require("./tempData.js");
+const router = express.Router();
+
+router.get("/", (req, res) => {
+  res.send("Hello World! | Movies 2");
+});
+
+router.get("/movies", (req, res) => {
+  res.json(tempData);
+});
+
+module.exports = router;
+
+</code></pre>
+        </article>
+      </section>
+
+      <!-- ========== section_3: Services ========== -->
+      <section class="section_3">
+        <!-- ----- article_1 -->
+        <article class="article_1 d_none">
+          <h3>3: Services</h3>
+          <pre><code class="hljs language-javascript">
+const tempData = require("./tempData.js");
+
+function getMovies() {
+  return tempData;
+}
+
+module.exports = {
+  getMovies
+};
+
+</code></pre>
+        </article>
+      </section>
+
+      <!-- ========== section_4: Services ========== -->
+      <section class="section_4">
+        <!-- ----- article_1 -->
+        <article class="article_1 d_none1">
+          <h3>4: Controllers</h3>
+          <pre><code class="hljs language-javascript">
+// moviesController.js
+
+const services = require("./services.js");
+// const { getMovies } = require("./services.js");
+
+services.getMovies();
+
+const helloWordController = (req, res) => {
+  res.send("Hello World! | Movies 3");
+};
+
+const getMoviesController = (req, res) => {
+  // const movies = getMovies();
+  const movies = services.getMovies();
+  res.json(movies);
+};
+
+module.exports = { helloWordController, getMoviesController };
+
+</code></pre>
+        </article>
+      </section>
+
+      <!-- ========== section_qya ========== -->
+      <section class="section_qya d_none1">
+        <article>
+          <h4>Preguntas</h4>
+          <ul>
+            <li>Que libreria usaste para dar estilos a esta pagina?</li>
+            <span>https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css</span>
+            <li>preguna 2?</li>
+            <span>respuesta</span>
+          </ul>
+        </article>
+
+        <style>
+          li {
+            font-weight: bold;
+            color: coral;
+            margin-top: 2em;
+          }
+        </style>
+      </section>
+    </main>
+
+    <script src="https://frankgp.com/lib/highlight.js" type="module"></script>
+    <script src="https://frankgp.com/lib/clipboard.js" defer></script>
+  </body>
+</html>

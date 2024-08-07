@@ -1,0 +1,14 @@
+###
+GET http://localhost:3000/files
+
+###
+POST http://localhost:3000/files/uploadImage/1efe88a1-dce8-4b2a-b031-db3ffcdeaee5
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1YjExY2RlZC1jZjFlLTQxMjktOGJjNi02NTQ0ODhkYzUwNzkiLCJpZCI6IjViMTFjZGVkLWNmMWUtNDEyOS04YmM2LTY1NDQ4OGRjNTA3OSIsImVtYWlsIjoidXNlcjFAZ21haWwuY29tIiwiaWF0IjoxNzE5MTA5MjUyLCJleHAiOjE3MTk5NzMyNTJ9.YmXS2MRz_dcHFIOPRSWbXhsAdMAqg5H2oHafLiZLg_c
+Content-Type: multipart/form-data; boundary=boundary123
+
+--boundary123
+Content-Disposition: form-data; name="image"; filename="image.jpg"
+Content-Type: image/jpeg
+
+< binary data >
+--boundary123--

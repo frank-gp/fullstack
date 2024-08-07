@@ -1,0 +1,18 @@
+###
+GET http://localhost:3000/
+
+###
+GET http://localhost:3000/users
+
+###
+GET http://localhost:3005/
+
+###
+GET http://localhost:3005/users
+
+# ========== DOCKER ==========
+###
+GET http://localhost:3002/
+
+###
+GET http://localhost:3002/users

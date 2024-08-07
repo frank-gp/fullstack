@@ -1,0 +1,10 @@
+###
+POST http://localhost:3000/users/profile/images
+Content-Type: multipart/form-data; boundary=boundary123
+
+--boundary123
+Content-Disposition: form-data; name="image"; filename="image.jpg"
+Content-Type: image/jpeg
+
+< binary data >
+--boundary123--

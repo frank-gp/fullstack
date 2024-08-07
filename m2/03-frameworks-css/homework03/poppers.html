@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Ejemplo Popper con Bootstrap 5.3</title>
+    <!-- Agrega Bootstrap 5.3 CSS -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" /> -->
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card">
+            <img src="https://bit.ly/unsplash200" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card 1</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card">
+            <img src="https://bit.ly/unsplash200" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card 2</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card">
+            <img src="https://bit.ly/unsplash200" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card 3</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Agrega Popper.js y Bootstrap 5.3 JS al final del body para mejorar el rendimiento -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script> -->
+
+    <link href="https://bit.ly/bootstrap5_css" rel="stylesheet" />
+    <script src="https://bit.ly/popperjs2_js"></script>
+    <script src="https://bit.ly/bootstrap5_js"></script>
+
+    <script>
+      // Inicializa el popover
+      var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+      var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl);
+      });
+    </script>
+  </body>
+</html>

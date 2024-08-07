@@ -1,0 +1,8 @@
+### ========== TODOS ==========
+###
+GET http://localhost:3000/todos
+token: 1234
+
+###
+GET http://localhost:3000/todos/1
+token: 1234

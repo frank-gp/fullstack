@@ -1,0 +1,124 @@
+* {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.navbar {
+  background-color: #fff;
+  height: 5em;
+  /* margin: 1.2em; */
+  /* border-radius: 1em; */
+  padding: 0.5em 2.5vw;
+}
+.navbar-brand {
+  font-weight: 500;
+  color: #097;
+  font-size: 1.5em;
+  transition: 0.3s color;
+}
+.github-button {
+  background-color: #097;
+  color: white;
+  font-size: 0.9em;
+  padding: 0.5em 1.2em;
+  border-radius: 4em;
+  text-decoration: none;
+  transition: 0.3s background-color;
+}
+.github-button:hover {
+  background-color: #0b8;
+}
+.navbar-toggler {
+  border: none;
+  /* border-radius: 0%; */
+  font-size: 1.25em;
+}
+.navbar-toggler:focus,
+.btn-close:focus {
+  box-shadow: none;
+  outline: none;
+}
+.nav-link {
+  color: #667;
+  font-weight: 500;
+  position: relative;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: #000;
+}
+
+@media (min-width: 62em) {
+  .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #097;
+    visibility: hidden;
+    transition: 0.2s ease-in-out;
+  }
+  .nav-link:hover::before,
+  .nav-link.active::before {
+    width: 100%;
+    visibility: visible;
+  }
+}
+
+.hero_section {
+  background: url(https://i.postimg.cc/q7YkgnzF/hero.webp) no-repeat center;
+  background-size: cover;
+  width: 100%;
+  /* aspect-ratio: 16/9; */
+  height: 100vh;
+  position: sticky;
+}
+.hero_section::before {
+  background-color: #0007;
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+.hero_section .container {
+  height: 100vh;
+  /* z-index: 0; */
+  position: relative;
+}
+.hero_section h1 {
+  font-size: 1.5em;
+}
+.hero_section h2 {
+  font-size: 1.3em;
+}
+
+.card img {
+  max-width: 100%;
+  aspect-ratio: 10/15;
+  object-fit: cover;
+}
+
+
+/* ========== footer... ========== */
+footer.container-fluid {
+  background-color: #222;
+  color: #ddd;
+  font-size: 1em;
+}
+footer h1 {
+  font-size: 1.5em;
+  color: white;
+  margin: 2.2em auto;
+
+}
+footer .bi {
+  color: white;
+  margin-right: .3em;
+}
+
+footer .img-fluid {
+  width: 100%;
+  /* height: 9em; */
+  aspect-ratio: 1/1;
+}
+/* ========== footer. ========== */

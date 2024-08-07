@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://frankgp.com/component/stat.js" type="module"></script>
+    <title>Cinema</title>
+  </head>
+  <body>
+    <header></header>
+
+    <main>
+      <h1>Proyecto de M2</h1>
+      <div id="movieList" class="card_container"></div>
+    </main>
+    <footer></footer>
+
+    <script src="./scripts/tempData.js?2024_02_28.2"></script>
+    <script>
+      var newDate_getTime = new Date().getTime();
+      import("./scripts/layout.js?" + newDate_getTime);
+      import("./scripts/main.js?" + newDate_getTime);
+    </script>
+  </body>
+</html>

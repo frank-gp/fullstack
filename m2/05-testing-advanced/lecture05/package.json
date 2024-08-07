@@ -1,0 +1,22 @@
+{
+  "name": "05",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll",
+    "add": "jest --watchAll tests/add.test.js",
+    "true": "jest --watchAll tests/true.test.js",
+    "mock": "jest --watchAll tests/prueba.mock.test.js",
+    "calc": "jest --watchAll tests/calcTotalMock.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "axios": "^1.6.8"
+  }
+}

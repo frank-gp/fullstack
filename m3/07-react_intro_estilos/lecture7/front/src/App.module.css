@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+    background: antiquewhite;
+}
+
+.title {
+    color: white;
+}
+
+.subtitle {
+    color: aqua;
+}

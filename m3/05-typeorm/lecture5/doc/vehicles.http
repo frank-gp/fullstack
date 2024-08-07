@@ -1,0 +1,16 @@
+###
+GET http://localhost:4000/vehicles/
+token: autenticado
+
+###
+POST http://localhost:4000/vehicles/
+token: autenticado
+Content-Type: application/json
+
+{
+	"brand": "Fiat",
+	"model": "Uno",
+	"year": 2020,
+	"color": "red",
+	"userId": 1
+}

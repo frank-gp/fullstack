@@ -1,0 +1,18 @@
+{
+  "name": "challenge-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll",
+    "dev": "jest --watchAll challenge-testing/tests/CarritoCompra.test.js",
+    "true": "jest --watchAll tests/true.spec.js",
+    "each": "jest --watchAll tests/each.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
+}

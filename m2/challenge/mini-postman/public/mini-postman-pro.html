@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch Example</title>
+    <style>
+      form {
+        max-width: 30rem;
+        margin: 10vh auto;
+        border: 1px solid #000;
+        box-sizing: border-box;
+        padding: 2em;
+      }
+      form input,
+      form textarea {
+        width: 100%;
+        padding: 0.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="requestForm">
+      <label for="apiUrl">API URL:</label>
+      <input type="text" id="apiUrl" value="http://127.0.0.1:3000/api" />
+      <br />
+      <br />
+
+      <!-- <label for="conte-id">Content ID:</label> -->
+      <!-- <input type="text" id="conte-id" value="1" /> -->
+      <!-- <br /><br /> -->
+
+      <label for="content-type">Select Content-Type:</label>
+      <select id="content-type" name="content-type">
+        <option value="application/json">Content-Type: application/json</option>
+        <option value="text/plain">Content-Type: text/plain</option>
+        <option value="application/x-www-form-urlencoded">Content-Type: application/x-www-form-urlencoded</option>
+      </select>
+      <br /><br />
+
+      <button type="button" onclick="sendRequest('GET')">GET</button>
+      <button type="button" onclick="sendRequest('POST')">POST</button>
+      <button type="button" onclick="sendRequest('PUT')">PUT</button>
+      <button type="button" onclick="sendRequest('DELETE')">DELETE</button><br /><br />
+
+      <label for="requestData">Request Data:</label><br />
+      <textarea id="requestData" cols="30" rows="10">
+{
+  "id": 2,
+  "name": "Peter"
+}
+</textarea
+      >
+      <br /><br />
+
+      <label for="responseData">Response Data:</label><br />
+      <textarea id="responseData" cols="30" rows="10"></textarea><br /><br />
+    </form>
+
+    <section class="demo">
+      <h2>code demo</h2>
+      <div>
+        <textarea name="" id="" cols="30" rows="10" readonly>
+Content-Type: application/json
+
+[
+{
+  "name": " user 1"
+}
+]
+        </textarea>
+        <textarea name="" id="" cols="30" rows="10" readonly>
+Content-Type: text/plain
+
+key1=value1&key2=value2
+        </textarea>
+        <textarea name="" id="" cols="30" rows="10" readonly>
+Content-Type: application/x-www-form-urlencoded
+
+key1=value1&key2=value2
+        </textarea>
+        <p>https://api.1rodemayo.com/movies</p>
+      </div>
+    </section>
+
+    <script>
+      function sendRequest(method) {
+        var contentType = document.getElementById("content-type").value;
+        var apiUrl = document.getElementById("apiUrl").value;
+        var requestData = document.getElementById("requestData").value;
+        // var contentId = document.getElementById("conte-id").value;
+
+        var requestOptions = {
+          method: method,
+          headers: {
+            "Content-Type": contentType,
+          },
+        };
+
+        // Check if requestData is non-empty and valid JSON
+        if (requestData.trim() !== "") {
+          try {
+            // Check if the selected content type is application/json
+            if (contentType === "application/json") {
+              try {
+                // Parse requestData as JSON
+                var requestDataJSON = JSON.parse(requestData);
+              } catch (error) {
+                console.error("Error parsing JSON:", error);
+                return; // Exit the function if there's an error
+              }
+            } else {
+              var requestDataJSON = requestData;
+            }
+
+            // Add body only if the method is not GET or HEAD
+            if (method !== "GET" && method !== "HEAD") {
+              requestOptions.body = JSON.stringify(requestDataJSON);
+            }
+          } catch (error) {
+            console.error("Error parsing JSON:", error);
+            return; // Exit the function if there's an error
+          }
+        }
+
+        // Append contentId to URL for DELETE request
+        // if (method === "DELETE" && contentId) {
+        //   apiUrl += "/" + contentId;
+        // }
+
+        fetch(apiUrl, requestOptions)
+          .then((response) => response.json()) // Change this if you're expecting different data
+          .then((data) => {
+            // Display response data in textarea
+            document.getElementById("responseData").value = JSON.stringify(data, null, 2);
+          })
+          .catch((error) => console.error("Error:", error));
+      }
+    </script>
+  </body>
+</html>

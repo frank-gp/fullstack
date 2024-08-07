@@ -1,0 +1,75 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  text-align: center;
+}
+
+header,
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: indigo;
+  padding: 1em 5vw;
+  color: white;
+  & nav {
+    display: flex;
+    gap: 1em;
+  }
+  & a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+footer {
+  /* text-align: center; */
+  justify-content: center;
+}
+main {
+  padding: 1em;
+  max-width: 80em;
+  margin: auto;
+}
+
+.card_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
+  /* align-items: center; */
+}
+.card_item {
+  /* background-color: tomato; */
+  border: 1px solid #0008;
+  flex: 0 1 16em;
+  padding: 2em 1em;
+  text-align: center;
+}
+.card_item p {
+  margin: 0;
+}
+.card_item img {
+  /* height: 22em; */
+
+  max-width: 100%;
+  /* aspect-ratio: 9/16; */
+}
+/* Button styles */
+.btn,
+button {
+  display: inline-block;
+  padding: 0.5em 1em;
+  border: 1px solid;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  margin: 0.3em;
+  background-color: transparent;
+  font-size: 1em;
+  font-family: inherit;
+}
+
+.btn:hover,
+button:hover {
+  opacity: 0.7;
+}

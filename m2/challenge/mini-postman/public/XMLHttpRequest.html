@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTTP Request Form</title>
+  </head>
+  <body>
+    <form id="requestForm">
+      <input type="text" id="apiUrl" value="https://api.1rodemayo.com/movies" /><br /><br />
+      <button type="button" onclick="sendRequest('GET')">GET</button>
+      <button type="button" onclick="sendRequest('POST')">POST</button>
+      <button type="button" onclick="sendRequest('PUT')">PUT</button>
+      <button type="button" onclick="sendRequest('DELETE')">DELETE</button><br /><br />
+      <textarea id="requestData" cols="30" rows="10"></textarea><br /><br />
+    </form>
+
+    <script>
+      function sendRequest(method) {
+        var url = document.getElementById("apiUrl").value;
+        var requestData = document.getElementById("requestData").value;
+
+        var xhr = new XMLHttpRequest();
+        xhr.open(method, url, true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status >= 200 && xhr.status < 300) {
+              alert("Request successful!");
+              console.log(xhr.responseText);
+            } else {
+              alert("Request failed with status code: " + xhr.status);
+            }
+          }
+        };
+
+        xhr.send(requestData);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+### rest-client
+###
+GET  http://localhost:3000/turns/
+
+###
+GET  http://localhost:3000/turns/1
+
+###
+POST http://127.0.0.1:3000/turns/schedule/
+Content-Type: application/json
+token: autenticado
+
+{
+    "date": "2024-05-05",
+    "time": "10:00 AM",
+    "userId": 1
+}
+
+###
+PUT http://localhost:3000/turns/cancel/1
+Content-Type: application/json
+
+{
+    "id": 1
+}
+
+

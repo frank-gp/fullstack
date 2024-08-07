@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" />
+    <title>bootstrap</title>
+    <style>
+      .active {
+        background-color: tomato;
+      }
+      .card-size {
+        width: 18em;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <h1>bootstrap</h1>
+      <p class="font-weight-bold">Sientete libre de personalizar y experimentar con estos estilos</p>
+      <ul id="list" class="list-group"></ul>
+      <button type="button" class="btn btn-primary">Primary</button>
+
+      <div class="container border">
+        <div class="row">
+          <!-- card... -->
+          <div class="card card-size">
+            <img src="//source.unsplash.com/200x200?people?1" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <!-- card. -->
+          <!-- card... -->
+          <div class="card card-size">
+            <img src="//source.unsplash.com/200x200?people?2" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <!-- card. -->
+          <!-- card... -->
+          <div class="card card-size">
+            <img src="//source.unsplash.com/200x200?people?3" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <!-- card. -->
+        </div>
+      </div>
+    </main>
+
+    <footer class="border">
+      <p>&copy; 2024 Ejemplo de HTML y CSS</p>
+    </footer>
+
+    <script>
+      const list = document.getElementById("list");
+
+      ["Jorge", "Belu", "Gama", "Alejo", "Alejandro"].forEach((name) => {
+        const li = document.createElement("li");
+        li.innerHTML = name;
+        li.classList.add("list-group-item");
+        li.addEventListener("mouseenter", (event) => {
+          event.target.classList.add("active");
+        });
+        li.addEventListener("mouseleave", (event) => {
+          event.target.classList.remove("active");
+        });
+        list.appendChild(li);
+      });
+    </script>
+  </body>
+</html>

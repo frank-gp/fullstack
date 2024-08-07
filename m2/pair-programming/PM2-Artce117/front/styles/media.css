@@ -1,0 +1,13 @@
+@media (max-width: 768px) {
+    .d-flex {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1000px) {
+    #d-flex {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
