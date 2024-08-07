@@ -1,0 +1,68 @@
+
+### rest-client
+### ========== users ==========
+
+###
+GET  http://localhost:3000/users/
+token: autenticado
+
+###
+GET  http://localhost:3000/users/1
+
+###
+POST http://127.0.0.1:3000/users/register/
+Content-Type: application/json
+
+{
+    "name": "Jhon Name",
+    "username": "john_username",
+    "email": "john@example.com",
+    "birthdate": "2024-05-04",
+    "nDni": 12345678,
+    "password": "password123"
+}
+
+###
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+    "username": "john_username",
+    "password": "password123"
+}
+
+###
+DELETE  http://localhost:3000/users/delete/1
+Content-Type: application/json
+
+
+### ========== temporal ==========
+PATCH  http://localhost:3000/users/credentials
+Content-Type: application/json
+
+
+
+
+### ========== turns ==========
+###
+GET  http://localhost:3000/turns/
+
+###
+GET  http://localhost:3000/turns/1
+
+###
+POST http://127.0.0.1:3000/turns/schedule/
+Content-Type: application/json
+
+{
+    "date": "2024-05-05",
+    "time": "11:00 PM",
+    "userId": 1
+}
+
+###
+PUT http://localhost:3000/turns/cancel/1
+Content-Type: application/json
+
+###
+DELETE  http://localhost:3000/turns/delete/1

@@ -1,0 +1,26 @@
+# docker-compose.yml
+# docker compose up
+
+version: '3.8'
+
+services:
+   nestapp:
+     image: fgp555/homework-m4:latest
+     ports:
+       - "3000:3000"
+     env_file:
+       - .env.development
+     depends_on:
+       - postgresdb
+
+
+
+   postgresdb:
+     image: postgres
+     volumes:
+       - pgdata:/var/lib/postgresql/data
+     env_file:
+       - .env.development
+
+volumes:
+  pgdata:

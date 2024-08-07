@@ -1,0 +1,32 @@
+### rest-client
+###
+GET  http://localhost:3000/users/
+
+###
+GET  http://localhost:3000/users/1
+
+###
+POST http://127.0.0.1:3000/users/register/
+Content-Type: application/json
+
+{
+  "name": "Henry",
+  "email": "hXG5W@example.com",
+  "birthdate": "1990-01-01",
+  "nDni": 12345678,
+  "password": "password123"
+}
+
+###
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+    "username": "john@example.com",
+    "password": "password123"
+}
+
+###
+PATCH  http://localhost:3000/users/credentials
+Content-Type: application/json
+

@@ -1,0 +1,13 @@
+### seeder
+POST http://localhost:3000/categories/seeder
+
+### get
+GET  http://localhost:3000/categories/
+
+### Create
+POST http://localhost:3000/categories
+Content-Type: application/json
+Authorization: Basic: <email>:<password>
+
+{ "name": "laptop" }
+

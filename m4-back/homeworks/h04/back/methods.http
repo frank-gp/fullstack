@@ -1,0 +1,114 @@
+# PRODUCTS
+
+## Create a new product
+POST http://localhost:3000/products
+Authorization: user@mail.com:Pass123
+Content-Type: application/json
+
+{
+  "name": "New Product",
+  "description": "A new product",
+  "price": 500,
+  "stock": true,
+  "imgUrl": "new-url"
+}
+
+###
+
+### Get all products (with pagination)
+GET http://localhost:3000/products?page=2&limit=5
+
+### Get all products
+GET http://localhost:3000/products
+
+### 
+
+## Get a specific product by ID
+GET http://localhost:3000/products/1
+
+###
+
+## Update a product by ID
+PUT http://localhost:3000/products/1
+Authorization: user@mail.com:Pass123
+Content-Type: application/json
+
+{
+  "name": "Updated Product",
+  "description": "Updated description",
+  "price": 600,
+  "stock": false,
+  "imgUrl": "updated-url"
+}
+
+###
+
+## Delete a product by ID
+DELETE http://localhost:3000/products/1
+Authorization: user@mail.com:Pass123
+
+
+###
+
+# USERS
+
+## Create a new user
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "email": "newuser@gmail.com",
+  "name": "New User",
+  "password": "password123",
+  "address": "new address",
+  "phone": "987654321",
+  "country": "New Country",
+  "city": "New City"
+}
+
+###
+
+## Get all users (with pagination) - Requires Authorization
+GET http://localhost:3000/users?page=3&limit=5
+Authorization: user@mail.com:Pass123
+
+###
+
+## Get a specific user by ID - Requires Authorization
+GET http://localhost:3000/users/1
+Authorization: user@mail.com:Pass123
+
+###
+
+## Update a user by ID - Requires Authorization
+PUT http://localhost:3000/users/1
+Authorization: user@mail.com:Pass123
+Content-Type: application/json
+
+{
+  "name": "Updated User",
+  "address": "updated address",
+  "phone": "123456789",
+  "country": "Updated Country",
+  "city": "Updated City"
+}
+
+###
+
+## Delete a user by ID - Requires Authorization
+DELETE http://localhost:3000/users/1
+Authorization: user@mail.com:Pass123
+
+###
+
+# AUTHENTICATION
+
+## Sign in
+POST http://localhost:3000/auth/signin
+Authorization: user@mail.com:Pass123
+Content-Type: application/json
+
+{
+  "email": "user@gmail.com",
+  "password": "123"
+}

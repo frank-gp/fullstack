@@ -1,0 +1,14 @@
+{
+  "name": "challenge-testing",
+  "version": "1.0.0",
+  "description": "Testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest  --watchAll"
+  },
+  "author": "Diego Cepeda",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

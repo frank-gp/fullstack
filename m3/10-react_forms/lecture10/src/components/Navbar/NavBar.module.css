@@ -1,0 +1,29 @@
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 10vh;
+  background-color: #333;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: "Roboto", sans-serif;
+}
+
+.navbar img {
+  width: 2em;
+}
+.linksSection{
+  display: flex;
+  gap: 1em;
+}
+.linksSection span {
+  font-size: 0.6em;
+  border: 1px solid #0000;
+  background-color: dimgray;
+  padding: 0.5em 1em ;
+  border-radius:  2em;
+  cursor: pointer;
+}

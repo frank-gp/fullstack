@@ -1,0 +1,23 @@
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30em;
+  max-width: 80%;
+  background-color: beige;
+  padding: 2em;
+  margin: 1em auto;
+  box-sizing: border-box;
+}
+button {
+  padding: 0.5em 1em;
+  font-size: 1.1em;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: black;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: 1px solid #000;
+  border-radius: 24px;
+}

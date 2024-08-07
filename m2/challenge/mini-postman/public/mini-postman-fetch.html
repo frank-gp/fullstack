@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini-Postman | Fetch</title>
+    <script src="https://frankgp.com/component/stat.js" type="module"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <style>
+      body {
+        text-align: center;
+      }
+      form,
+      .container {
+        max-width: 33em;
+        margin: auto;
+      }
+      input,
+      textarea {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <br>
+    <a href="./index.html"><button>mini-postman-axios</button></a>
+    <hr />
+    <br />
+    <h2>Mini-Postman | Fetch</h2>
+
+    <form action="">
+      <input type="text" name="" id="apiUrl" value="http://127.0.0.1:3000/api" />
+      <br /><br />
+      <button type="button" id="get_button" onclick="getFuncion()">get</button>
+      <button type="button" id="post_button" onclick="sendData('post')">post</button>
+      <button type="button" id="put_button" onclick="sendData('put')">put</button>
+      <button type="button" id="delete_button" onclick="sendData('delete')">delete</button>
+    </form>
+
+    <div class="container">
+      <pre><code>{"id": 2,"name": "Peter Demo 2"}</code></pre>
+      <textarea name="" id="textarea_input" rows="10" placeholder="textarea_input"></textarea>
+      <textarea name="" id="textarea_output" rows="10" placeholder="textarea_output"></textarea>
+    </div>
+    <script>
+      const apiUrl = document.querySelector("#apiUrl");
+      const textarea_input = document.querySelector("#textarea_input");
+
+      function getFuncion() {
+        const apiUrlValue = apiUrl.value;
+        fetch(apiUrlValue)
+          .then((res) => res.json())
+          .then((dataJson) => {
+            console.log(dataJson);
+            document.querySelector("#textarea_output").value = JSON.stringify(dataJson, null, 2);
+          })
+          .catch((err) => console.log(err));
+      }
+
+      function sendData(parameterMethod) {
+        const apiUrlValue = apiUrl.value;
+        const textarea_inputValue = textarea_input.value;
+        fetch(apiUrlValue, {
+          method: parameterMethod,
+          headers: {
+            "Content-Type": "application/json",
+          },
+          // body: JSON.stringify([{ name: "frank", lasname: "gomez" }]),
+          body: textarea_inputValue,
+        })
+          .then((res) => res.json())
+          .then((dataJson) => {
+            console.log(dataJson);
+            document.querySelector("#textarea_output").value = JSON.stringify(dataJson, null, 2);
+          })
+          .catch((err) => console.log(err));
+      }
+    </script>
+  </body>
+</html>

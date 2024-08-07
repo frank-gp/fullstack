@@ -1,0 +1,8 @@
+```bash
+npm create vite@latest
+
+npm run dev
+
+npm i styled-components
+
+```

@@ -1,0 +1,44 @@
+[
+  {
+    "Director_ID": 1,
+    "Nombre del Director": "S.J. Clarkson",
+    "Año de Nacimiento": "1968",
+    "Total de Películas Dirigidas": 1
+  },
+  {
+    "Director_ID": 2,
+    "Nombre del Director": "Lilly Wachowski",
+    "Año de Nacimiento": "1967",
+    "Total de Películas Dirigidas": 2
+  },
+  {
+    "Director_ID": 3,
+    "Nombre del Director": "Robert Zemeckis",
+    "Año de Nacimiento": "1952",
+    "Total de Películas Dirigidas": 2
+  },
+  {
+    "Director_ID": 4,
+    "Nombre del Director": "Christopher Nolan",
+    "Año de Nacimiento": "1970",
+    "Total de Películas Dirigidas": 3
+  },
+  {
+    "Director_ID": 5,
+    "Nombre del Director": "Quentin Tarantino",
+    "Año de Nacimiento": "1963",
+    "Total de Películas Dirigidas": 2
+  },
+  {
+    "Director_ID": 6,
+    "Nombre del Director": "Frank Darabont",
+    "Año de Nacimiento": "1959",
+    "Total de Películas Dirigidas": 1
+  },
+  {
+    "Director_ID": 7,
+    "Nombre del Director": "Francis Ford Coppola",
+    "Año de Nacimiento": "1939",
+    "Total de Películas Dirigidas": 1
+  }
+]

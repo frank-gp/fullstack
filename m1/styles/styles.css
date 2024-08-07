@@ -1,0 +1,174 @@
+/* global */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+
+.font-light,
+p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.font-regular,
+a,
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-bold,
+h1,
+h2,
+h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+}
+body {
+  background-color: #eef;
+  color: #555;
+}
+
+/***** reusable selectors *****/
+.block {
+  background-color: #000;
+  color: #fff;
+  padding: 1em 5vw;
+}
+/* buttons */
+.btn {
+  font-size: 1.2em;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  padding: 0.5em 1em;
+  margin: 1em;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+}
+/* ========== header ========== */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  & a {
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-left: 0.5em;
+  }
+  & a:hover {
+    text-decoration: underline;
+  }
+}
+
+/* ========== main ========== */
+main {
+  max-width: 60em;
+  margin: auto;
+}
+main section {
+  background-color: #fffc;
+  margin: 2em auto;
+  padding: 3em 1em;
+  text-align: center;
+}
+
+/* _____ about section _____ */
+#about {
+  background-color: initial;
+}
+.about_profile {
+  border: 0.3em solid;
+  padding: 0.1em;
+  /* ux */
+  width: 100%;
+  max-width: 12em;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+.about_description {
+  max-width: 55ch;
+  margin: auto;
+}
+
+/* _____ tech section _____ */
+.card_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+  /* margin: auto; */
+  /* text-align: center; */
+  /* background-color: PERU; */
+  /* max-width: 51em; */
+}
+.card_item {
+  flex: 0 1 16em;
+  border: 1px solid #ccc;
+  position: relative;
+}
+.card_item button {
+  display: none;
+}
+.card_item:hover button {
+  display: inline-block;
+  position: absolute;
+  z-index: 1;
+  /* top: 50%; */
+  /* left: 50%; */
+  transform: translate(-50%);
+  margin: 0;
+  /* padding: 0; */
+  /* width: 100%; */
+  /* aspect-ratio: 1/1; */
+  top: 10em;
+  /* bottom: 0; */
+  background-color: #fff;
+  color: #000;
+  /* margin: .1em; */
+  /* box-sizing: border-box; */
+  &:hover {
+    opacity: 1;
+
+    background-color: #f00;
+    color: #fff;
+  }
+}
+.card_img {
+  aspect-ratio: 1/1;
+}
+#activities .card_item:hover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #0008;
+  /* z-index: 1; */
+  width: 100%;
+  aspect-ratio: 1/1;
+  /* cursor: pointer; */
+}
+/* _____ activities _____ */
+.activities_form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  max-width: 30em;
+  margin: 2em auto;
+  & input,
+  textarea {
+    /* background-color: #fff; */
+    padding: 1em;
+    font-family: inherit;
+    font-size: inherit;
+    outline: none;
+    border: 1px solid #8888;
+  }
+}
+
+/* ========== footer ========== */
+footer {
+  text-align: center;
+}

@@ -1,0 +1,32 @@
+
+# ==================== USERS ====================
+
+### Get all users (with pagination) - Requires Authorization
+GET http://localhost:3000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0MGJjNmI4Yy02YjZiLTQzZjktYTc4MC0yM2JhZjlkZDM0M2YiLCJpZCI6IjQwYmM2YjhjLTZiNmItNDNmOS1hNzgwLTIzYmFmOWRkMzQzZiIsImVtYWlsIjoidXNlcjJAZ21haWwuY29tIiwicm9sZXMiOlsiYWRtaW4iXSwiaWF0IjoxNzE5MjQ0OTc3LCJleHAiOjE3MjAxMDg5Nzd9.JzUDt5bQDxFskBpi3XS_BGeuTvCI2pxVrnUOjwDhstg
+
+### Get all users (with pagination) - Requires Authorization
+GET http://localhost:3000/users?page=1&limit=1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1YjExY2RlZC1jZjFlLTQxMjktOGJjNi02NTQ0ODhkYzUwNzkiLCJpZCI6IjViMTFjZGVkLWNmMWUtNDEyOS04YmM2LTY1NDQ4OGRjNTA3OSIsImVtYWlsIjoidXNlcjFAZ21haWwuY29tIiwiaWF0IjoxNzE5MTA5MjUyLCJleHAiOjE3MTk5NzMyNTJ9.YmXS2MRz_dcHFIOPRSWbXhsAdMAqg5H2oHafLiZLg_c
+
+### Get a specific user by ID - Requires Authorization
+GET http://localhost:3000/users/40bc6b8c-6b6b-43f9-a780-23baf9dd343f
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1YjExY2RlZC1jZjFlLTQxMjktOGJjNi02NTQ0ODhkYzUwNzkiLCJpZCI6IjViMTFjZGVkLWNmMWUtNDEyOS04YmM2LTY1NDQ4OGRjNTA3OSIsImVtYWlsIjoidXNlcjFAZ21haWwuY29tIiwiaWF0IjoxNzE5MTA5MjUyLCJleHAiOjE3MTk5NzMyNTJ9.YmXS2MRz_dcHFIOPRSWbXhsAdMAqg5H2oHafLiZLg_c
+
+### Update a user by ID - Requires Authorization
+PUT http://localhost:3000/users/40bc6b8c-6b6b-43f9-a780-23baf9dd343f
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1YjExY2RlZC1jZjFlLTQxMjktOGJjNi02NTQ0ODhkYzUwNzkiLCJpZCI6IjViMTFjZGVkLWNmMWUtNDEyOS04YmM2LTY1NDQ4OGRjNTA3OSIsImVtYWlsIjoidXNlcjFAZ21haWwuY29tIiwiaWF0IjoxNzE5MTA5MjUyLCJleHAiOjE3MTk5NzMyNTJ9.YmXS2MRz_dcHFIOPRSWbXhsAdMAqg5H2oHafLiZLg_c
+Content-Type: application/json
+
+{
+  "name": "Updated User",
+  "address": "updated address",
+  "phone": "123456789",
+  "country": "Updated Country",
+  "city": "Updated City"
+}
+
+### Delete a user by ID - Requires Authorization
+DELETE http://localhost:3000/users/40bc6b8c-6b6b-43f9-a780-23baf9dd343f
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1YjExY2RlZC1jZjFlLTQxMjktOGJjNi02NTQ0ODhkYzUwNzkiLCJpZCI6IjViMTFjZGVkLWNmMWUtNDEyOS04YmM2LTY1NDQ4OGRjNTA3OSIsImVtYWlsIjoidXNlcjFAZ21haWwuY29tIiwiaWF0IjoxNzE5MTA5MjUyLCJleHAiOjE3MTk5NzMyNTJ9.YmXS2MRz_dcHFIOPRSWbXhsAdMAqg5H2oHafLiZLg_c
+

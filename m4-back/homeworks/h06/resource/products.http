@@ -1,0 +1,54 @@
+# PRODUCTS
+
+### Create a new product
+POST http://localhost:3000/products/seeder
+
+### Create a new product
+POST http://localhost:3000/products
+Authorization: Basic: <email>:<password>
+Content-Type: application/json
+
+{
+  "name": "Iphone 143",
+  "description": "A new product",
+  "price": 50,
+  "stock": 10,
+  "category": "smartphone",
+  "imgUrl": "http://example.com/new-url.jpg"
+}
+
+
+### Get all products (with pagination)
+GET http://localhost:3000/products?page=1&limit=3
+
+### Get all products
+GET http://localhost:3000/products
+
+###
+
+## Get a specific product by ID
+GET http://localhost:3000/products/3f35f689-cd27-48d4-9faf-57e8b6882a46
+
+###
+
+## Update a product by ID
+PUT http://localhost:3000/products/3f35f689-cd27-48d4-9faf-57e8b6882a46
+Authorization: Basic: <email>:<password>
+Content-Type: application/json
+
+{
+  "name": "Updated Product",
+  "description": "Updated description",
+  "price": 600,
+  "stock": 2,
+  "imgUrl": "updated-url"
+}
+
+###
+
+## Delete a product by ID
+DELETE http://localhost:3000/products/3f35f689-cd27-48d4-9faf-57e8b6882a46
+Authorization: Basic: <email>:<password>
+
+
+###

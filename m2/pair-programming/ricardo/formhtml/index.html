@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyecto de M2</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" /> -->
+    <!-- <base href="../" /> -->
+    <!-- <link href="styles.css" rel="stylesheet" /> -->
+  </head>
+  <body>
+    <main class="">
+      <form id="myForm">
+        <input type="text" id="title" name="title" />
+        <button type="reset" id="reset" onclick="cleanForm()">Reset</button>
+      </form>
+      <!-- <form id="myForm">
+        <input type="text" id="name" name="name" /><br /><br />
+
+        <input type="reset" value="Reset" onclick="resetForm()" />
+      </form> -->
+
+      <script>
+        // CTRL + D para seleccionar el patron progresivamente
+        //const form = document.querySelector('form')
+
+        const cleanForm = () => {
+          let form1 = document.getElementById("myForm");
+          form1.reset();
+        };
+      </script>
+    </main>
+  </body>
+</html>

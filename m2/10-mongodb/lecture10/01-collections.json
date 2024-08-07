@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Una pelicula",
+    "director": "Un director",
+    "year": 1999
+  },
+  {
+    "title": "Otra pelicula",
+    "director": "Otro director",
+    "year": 2000,
+    "genres": ["Action"]
+  },
+  {
+    "title": "Otra pelicula mas",
+    "director": "Otro director",
+    "genres": ["Comedy"]
+  },
+  {
+    "album": "Un disco",
+    "nombre_cancion": "Una cancion"
+  }
+]

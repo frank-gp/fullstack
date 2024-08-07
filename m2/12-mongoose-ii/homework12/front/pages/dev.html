@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enviar Datos con Axios y Bootstrap</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      .input-group-text,
+      .form-label {
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mt-5">Enviar Datos de Película</h1>
+      <form id="movieForm">
+        <div class="mb-3 input-group">
+          <span class="input-group-text">Título</span>
+          <input type="text" class="form-control" id="title" name="title" placeholder="Título" aria-label="Título" aria-describedby="basic-addon1" value="Granizo 2024" />
+        </div>
+        <div class="mb-3 input-group">
+          <span class="input-group-text">Año</span>
+          <input type="number" class="form-control" id="year" name="year" placeholder="Año" aria-label="Año" aria-describedby="basic-addon1" value="2024" />
+        </div>
+        <div class="mb-3 input-group">
+          <span class="input-group-text">Director</span>
+          <input
+            type="text"
+            class="form-control"
+            id="director"
+            name="director"
+            placeholder="Director"
+            aria-label="Director"
+            aria-describedby="basic-addon1"
+            value="Director Name"
+          />
+        </div>
+        <div class="mb-3 input-group">
+          <span class="input-group-text">Duración</span>
+          <input type="text" class="form-control" id="duration" name="duration" placeholder="Duración" aria-label="Duración" aria-describedby="basic-addon1" value="2h 15min" />
+        </div>
+
+        <div class="mb-3 input-group">
+          <label for="genre" class="form-label me-3">Género:</label>
+          <div class="btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-outline-primary"> <input type="checkbox" name="genre" value="Action" checked /> Action </label>
+            <label class="btn btn-outline-primary"> <input type="checkbox" name="genre" value="Thriller" /> Thriller </label>
+            <label class="btn btn-outline-primary"> <input type="checkbox" name="genre" value="Sci-Fi" /> Sci-Fi </label>
+            <label class="btn btn-outline-primary"> <input type="checkbox" name="genre" value="Drama" /> Drama </label>
+            <label class="btn btn-outline-primary"> <input type="checkbox" name="genre" value="Comedy" /> Comedy </label>
+            <label class="btn btn-outline-primary"> <input type="checkbox" name="genre" value="Horror" /> Horror </label>
+          </div>
+        </div>
+
+        <div class="mb-3 input-group">
+          <span class="input-group-text">Calificación</span>
+          <input
+            type="number"
+            class="form-control"
+            id="rate"
+            name="rate"
+            step="0.1"
+            placeholder="Calificación"
+            aria-label="Calificación"
+            aria-describedby="basic-addon1"
+            value="6.2"
+          />
+        </div>
+        <div class="mb-3 input-group">
+          <span class="input-group-text">Póster</span>
+          <input
+            type="text"
+            class="form-control"
+            id="poster"
+            name="poster"
+            placeholder="URL del Póster"
+            aria-label="URL del Póster"
+            aria-describedby="basic-addon1"
+            value="https://i.postimg.cc/zBx6hHT9/granizo.webp"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+
+    <!-- Bootstrap JS (opcional, si deseas usar componentes de JavaScript de Bootstrap) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+      document.getElementById("movieForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Get the selected genres
+        const selectedGenres = Array.from(document.querySelectorAll('input[name="genre"]:checked')).map((genre) => genre.value);
+
+        // Obtain other form data
+        const formData = new FormData(this);
+        const movieData = Object.fromEntries(formData.entries());
+
+        // Add the selected genres to the movie data
+        movieData.genre = selectedGenres;
+
+        // Send the data to the server using Axios
+        // axios
+        //   .post("URL_OF_THE_SERVER", movieData)
+        //   .then(function (response) {
+        //     console.log("Server response:", response.data);
+        //     // Handle server response here, e.g., show a success message
+        //   })
+        //   .catch(function (error) {
+        //     console.error("Error sending data:", error);
+        //     // Handle error here, e.g., show an error message to the user
+        //   });
+
+        // For demonstration, log the movie data with the selected genres
+        console.log(movieData);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+
+# ==================== USERS ====================
+
+## Create a new user
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "email": "newuser@gmail.com",
+  "name": "New User",
+  "password": "password123",
+  "address": "new address",
+  "phone": "987654321",
+  "country": "New Country",
+  "city": "New City"
+}
+
+### Get all users (with pagination) - Requires Authorization
+GET http://localhost:3000/users
+Authorization: Basic: <email>:<password>
+
+### Get all users (with pagination) - Requires Authorization
+GET http://localhost:3000/users?page=1&limit=3
+Authorization: Basic: <email>:<password>
+
+### Get a specific user by ID - Requires Authorization
+GET http://localhost:3000/users/573e3ab3-0f76-4da1-bc95-e1ec50fa0591
+Authorization: Basic: <email>:<password>
+
+### Update a user by ID - Requires Authorization
+PUT http://localhost:3000/users/0b5ee2b8-af71-4cbb-aca3-5d915a33aacc
+Authorization: Basic: <email>:<password>
+Content-Type: application/json
+
+{
+  "name": "Updated User",
+  "address": "updated address",
+  "phone": "123456789",
+  "country": "Updated Country",
+  "city": "Updated City"
+}
+
+### Delete a user by ID - Requires Authorization
+DELETE http://localhost:3000/users/f2a78ba3-814a-4217-8919-b63ea918a32a
+Authorization: Basic: <email>:<password>
+
+### AUTHENTICATION
+### Sign in
+POST http://localhost:3000/auth/signin
+Authorization: Basic: <email>:<password>
+Content-Type: application/json
+
+{
+  "email": "user@gmail.com",
+  "password": "123"
+}

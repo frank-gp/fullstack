@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0.8em;
+  border: 1px solid palevioletred;
+  border-radius: 0.1em;
+  background-color: bisque;
+}

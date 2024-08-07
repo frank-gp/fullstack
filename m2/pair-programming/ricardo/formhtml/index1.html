@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyecto de M2</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" /> -->
+    <!-- <base href="../" /> -->
+    <!-- <link href="styles.css" rel="stylesheet" /> -->
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div id="logo">
+            <img src="assets/img/video-camera-symbol.png" />
+          </div>
+
+          <a class="navbar-brand" href="#">CINEMATRIX</a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pages/about.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pages/form.html">Formulario</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pages/contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main class="container">
+      <form id="formulario">
+        <label for="title">Title <input type="text" id="title" name="title" /> </label><br />
+        <label for="year">Year <input type="text" id="year" name="year" /> </label><br />
+        <label for="director">Director <input type="text" id="director" name="director" /> </label><br />
+        <label for="duration">Duration <input type="text" id="duration" name="duration" /> </label><br />
+        <label for="genre">Genre <input type="text" id="genre" name="genre" /> </label><br />
+        <label for="rates">Rates <input type="text" id="rates"  name="rates" /> </label><br />
+        <label for="poster">Poster  </label><br />
+        <input type="text" id="poster" name="poster" value="poster" />
+        <button type="submit" id="submit">Submit</button>
+        <button type="button" id="reset" onclick="cleanForm()">Reset</button>
+      </form>
+      <p id="notificationBox"></p>
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+
+      <script>
+        // CTRL + D para seleccionar el patron progresivamente
+        //const form = document.querySelector('form')
+        const form = document.getElementById("formulario");
+
+        const cleanForm = () => {
+          let form1 = document.getElementById("formulario");
+          form1.reset();
+        };
+        const btnReset = document.getElementById("reset");
+        btnReset.addEventListener("click", cleanForm);
+
+        const submitMovie = () => {
+          event.preventDefault();
+          const title = document.getElementById("title").value;
+          const year = document.getElementById("year").value;
+          const director = document.getElementById("director").value;
+          const duration = document.getElementById("duration").value;
+          const genre = document.getElementById("genre").value;
+          const rates = document.getElementById("rates").value;
+          const poster = document.getElementById("poster").value;
+          const btnSubmit = document.getElementById("submit");
+
+          const notificationBox = document.querySelector("#notificationBox");
+
+          if (!title) return (notificationBox.innerHTML = "Title is required");
+          if (!year) return (notificationBox.innerHTML = "Year is required");
+          if (!director) return (notificationBox.innerHTML = "Director is required");
+          if (!duration) return (notificationBox.innerHTML = "Duration is required");
+          if (!genre) return (notificationBox.innerHTML = "Genre is required");
+          if (!rates) return (notificationBox.innerHTML = "Rates is required");
+          if (!poster) return (notificationBox.innerHTML = "Poster is required");
+
+          //if(isNaN(year)) return notificationBox.innerHTML = 'Year must be a number'
+
+          notificationBox.innerHTML = "Sending data...";
+          btnSubmit.setAttribute("aria-busy", "true");
+
+          axios
+            .post("http://localhost:3000/", {
+              title,
+              year,
+              director,
+              duration,
+              genre,
+              rates,
+              poster,
+            })
+            .then((response) => {
+              notificationBox.innerHTML = "Successfully added";
+              cleanForm();
+              console.log(response);
+            })
+            .catch((error) => {
+              notificationBox.innerHTML = "Something went wrong " + error.response.data.errorMessage;
+              console.log(error);
+            })
+            .finally(() => {
+              btnSubmit.removeAttribute("aria-busy");
+            });
+        };
+
+        form.addEventListener("submit", submitMovie);
+      </script>
+      <!-- <div  class="container">
+        <br>
+        <h2>My Movies</h2>
+        <p>
+          Movie Form
+        </p>
+        <div class="row" id="cont_formMovies">
+
+        </div>
+      </div> -->
+    </main>
+    <footer class="container">All right reserved</footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <!-- <script src="./public/bundle.js"></script> -->
+  </body>
+</html>

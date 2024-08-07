@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Real-time Validation</title>
+</head>
+<body>
+  <form>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    <span id="emailError" style="color: red;"></span>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+    <span id="passwordError" style="color: red;"></span>
+  </form>
+
+  <script>
+    const emailInput = document.getElementById('email');
+    const emailError = document.getElementById('emailError');
+    const passwordInput = document.getElementById('password');
+    const passwordError = document.getElementById('passwordError');
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+
+    emailInput.addEventListener('input', function() {
+      if (!emailRegex.test(emailInput.value)) {
+        emailError.textContent = 'Invalid email format';
+      } else {
+        emailError.textContent = '';
+      }
+    });
+
+    passwordInput.addEventListener('input', function() {
+      if (!passwordRegex.test(passwordInput.value)) {
+        passwordError.textContent = 'Password must be at least 8 characters long and contain at least one digit, one lowercase letter, and one uppercase letter.';
+      } else {
+        passwordError.textContent = '';
+      }
+    });
+  </script>
+</body>
+</html>

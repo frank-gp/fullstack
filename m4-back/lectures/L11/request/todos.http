@@ -1,0 +1,22 @@
+### ========== TODOS ==========
+###
+GET http://localhost:3000/todos
+token: 1234
+
+###
+GET http://localhost:3000/todos/1
+token: 1234
+
+###
+POST  http://localhost:3000/todos/upload
+token: 1234
+
+###
+POST  http://localhost:3000/todos
+Content-Type: application/json
+token: 1234
+
+{
+    "title": "test",
+    "description": "test"
+}

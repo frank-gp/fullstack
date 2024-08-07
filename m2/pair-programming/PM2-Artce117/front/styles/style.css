@@ -1,0 +1,31 @@
+.card {
+  width: 260px;
+  height: 635px;
+}
+
+.card a {
+  text-decoration: none;
+}
+
+.card-body {
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.nav-link:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.card:hover {
+    opacity: 0.8;
+}

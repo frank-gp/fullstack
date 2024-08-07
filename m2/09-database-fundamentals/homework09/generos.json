@@ -1,0 +1,34 @@
+[
+  {
+    "Género_ID": 1,
+    "Género": "Fantástico"
+  },
+  {
+    "Género_ID": 2,
+    "Género": "Acción"
+  },
+  {
+    "Género_ID": 3,
+    "Género": "Ciencia ficción"
+  },
+  {
+    "Género_ID": 4,
+    "Género": "Drama"
+  },
+  {
+    "Género_ID": 5,
+    "Género": "Romance"
+  },
+  {
+    "Género_ID": 6,
+    "Género": "Aventura"
+  },
+  {
+    "Género_ID": 7,
+    "Género": "Crimen"
+  },
+  {
+    "Género_ID": 8,
+    "Género": "Bélico"
+  }
+]
